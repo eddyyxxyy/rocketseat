@@ -83,6 +83,7 @@ body * {
   z-index: 1;
   transform: translateY(-50%);
   animation: toggle-slide 0.2s;
+  transition: outline ease-in-out 0.2s;
 }
 
 #switch button:hover {
