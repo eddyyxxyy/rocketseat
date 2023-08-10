@@ -4,25 +4,26 @@
   box-sizing: border-box;
 }
 
-:root {
-  --title-text-color: #32264d;
-  --label-text-color: #4e4958;
-  --span-text-color: #c1bccc;
-}
-
 body {
   background-color: #d9d9d9;
 }
 
-main {
-}
-
 header {
-  padding: 80px 0 130px;
+  display: flex;
+  justify-content: center;
+  height: 370px;
   background-color: #121214;
 }
 
-header h1 {
+#top {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 65%;
+  padding: 80px 0 130px;
+}
+
+#top h1 {
   font-family: "Archivo", sans-serif;
   font-weight: bold;
   font-size: 36px;
@@ -30,10 +31,152 @@ header h1 {
   color: #fff;
 }
 
-header p {
+#top p {
   font-family: "Poppins", sans-serif;
-  font-weight: normal;
-  font: 16px;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 26px;
   color: #42d3ff;
+}
+
+section {
+  width: 66%;
+  margin: -90px auto 90px;
+  border-radius: 8px;
+  background-color: #fafafc;
+}
+
+section form #form-inputs,
+#form-submit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px;
+  color: #4e4958;
+}
+
+section form #form-inputs h2 {
+  font-family: "Archivo", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 34px;
+  color: #32264d;
+  padding-top: 24px;
+}
+
+.form-divider {
+  border: 1px solid #e6e6f0;
+  margin: 16px 0 24px;
+}
+
+section form #form-inputs label {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #4e4958;
+  margin-bottom: 10px;
+}
+
+section form #form-inputs label span {
+  font-size: 12px;
+  line-height: 20px;
+  color: #c1bccc;
+}
+
+section form #form-inputs :is(input, textarea, select) {
+  display: block;
+  width: 100%;
+  max-height: 170px;
+  border: 1px solid #e6e6f0;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  font-size: medium;
+  font-family: "Poppins", sans-serif;
+  padding: 16px 24px;
+  background-color: #fff;
+}
+
+section form #form-inputs input {
+  height: 56px;
+}
+
+section form #form-inputs select {
+  color: #c1bccc;
+  cursor: pointer;
+}
+
+#checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+section form #form-inputs input[type="checkbox"] {
+  height: 24px;
+  width: 24px;
+  align-self: flex-start;
+  margin: 0;
+  cursor: pointer;
+}
+
+section form #form-inputs label[for="evento-privado"] {
+  line-height: 24px;
+  margin: 0;
+}
+
+section form #form-inputs #data-e-hora {
+  display: inline-flex;
+  align-items: center;
+  justify-items: center;
+}
+
+section form #form-inputs #data-e-hora label {
+  width: 25%;
+}
+
+section form #form-inputs #data-e-hora :first-child {
+  width: 50%;
+}
+
+section form #form-inputs #data-e-hora :last-child {
+  padding-left: 10px;
+}
+
+section form #form-inputs #data-e-hora-inputs {
+  display: inline-flex;
+  align-items: center;
+  justify-items: center;
+  gap: 20px;
+}
+
+section form #form-inputs #data-e-hora-inputs input {
+  width: 25%;
+}
+
+section form #form-inputs #data-e-hora-inputs :first-child {
+  width: 50%;
+}
+
+#form-submit {
+  padding: 40px 64px;
+  background-color: #f0f0f4;
+}
+
+#form-submit button {
+  padding: 15px 40px;
+  font-family: "Archivo", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
+  color: #fff;
+  background-color: #04d361;
+  border: 0;
+  border-radius: 8px;
+}
+
+#form-submit button:hover {
+  cursor: pointer;
+  background-color: #06b957;
 }

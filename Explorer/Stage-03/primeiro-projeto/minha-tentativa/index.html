@@ -15,11 +15,86 @@
   <body>
     <main>
       <header>
-        <h1>Crie e compartilhe<br />seu evento.</h1>
-        <p>O primeiro passo, é preencher esse<br />formulário de inscrição.</p>
+        <div id="top">
+          <h1>Crie e compartilhe<br />seu evento.</h1>
+          <p>
+            O primeiro passo, é preencher esse<br />formulário de inscrição.
+          </p>
+        </div>
       </header>
       <section>
-        <form action="#" method="post"></form>
+        <form action="#" method="post">
+          <div id="form-inputs">
+            <h2>Informações do Evento</h2>
+            <div class="form-divider"></div>
+            <label for="titulo-evento"
+              >Título do evento <span>(mínimo 8 caracteres)</span></label
+            >
+            <input type="text" name="titulo-evento" id="titulo-evento" />
+            <label for="link-evento"
+              >Link do evento <span>(comece com https://)</span></label
+            >
+            <input type="text" name="link-evento" id="link-evento" />
+            <label for="whatsapp-contato"
+              >Whatsapp para contato <span>(somente numeros)</span></label
+            >
+            <input type="tel" name="whatsapp-contato" id="whatsapp-contato" />
+            <label for="informacoes-extras">Informações extras</label>
+            <textarea
+              name="informacoes-extras"
+              id="informacoes-extras"
+              cols="30"
+              rows="10"
+            ></textarea>
+            <label for="categoria">Categoria</label>
+            <select name="categoria" id="categoria">
+              <option value="" disabled selected>Tipo do evento</option>
+            </select>
+            <h2>Privacidade</h2>
+            <div class="form-divider"></div>
+            <label for="email-administrador"
+              >E-mail do administrador
+              <span>(digite um email válido)</span></label
+            >
+            <input
+              type="email"
+              name="email-administrador"
+              id="email-administrador"
+            />
+            <label for="senha-participantes"
+              >Senha de acesso para os participantes
+              <span>(mínimo 8 caracteres)</span></label
+            >
+            <input
+              type="password"
+              name="senha-participantes"
+              id="senha-participantes"
+            />
+            <div id="checkbox">
+              <input
+                type="checkbox"
+                name="evento-privado"
+                id="evento-privado"
+              />
+              <label for="evento-privado">Evento privado</label>
+            </div>
+            <h2>Dia e hora</h2>
+            <div class="form-divider"></div>
+            <div id="data-e-hora">
+              <label for="data-evento">Data</label
+              ><label for="horario-inicio">Das</label
+              ><label for="horario-fim">Até</label>
+            </div>
+            <div id="data-e-hora-inputs">
+              <input type="date" name="data-evento" id="data-evento" />
+              <input type="time" name="horario-inicio" id="horario-inicio" />
+              <input type="time" name="horario-fim" id="horario-fim" />
+            </div>
+          </div>
+          <div id="form-submit">
+            <button type="button" name="criar-evento">Salvar evento</button>
+          </div>
+        </form>
       </section>
     </main>
   </body>
