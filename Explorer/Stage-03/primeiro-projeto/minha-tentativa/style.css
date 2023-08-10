@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --title-text-color: #32264d;
+  --label-text-color: #4e4958;
+  --span-text-color: #c1bccc;
+}
+
+body {
+  background-color: #d9d9d9;
+}
+
+main {
+}
+
+header {
+  padding: 80px 0 130px;
+  background-color: #121214;
+}
+
+header h1 {
+  font-family: "Archivo", sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  color: #fff;
+}
+
+header p {
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font: 16px;
+  line-height: 26px;
+  color: #42d3ff;
+}
