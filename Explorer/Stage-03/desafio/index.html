@@ -65,8 +65,66 @@
                   </select>
                 </div>
               </div>
+              <div class="input-wrapper">
+                <label for="client-mentor-feedback"
+                  >Feedback sobre o mentor</label
+                >
+                <textarea
+                  name="client-mentor-feedback"
+                  title="client-mentor-feedback"
+                ></textarea>
+              </div>
+              <div class="input-wrapper">
+                <div class="checkbox-wrapper">
+                  <input
+                    type="checkbox"
+                    name="client-doubts-answered"
+                    title="client-doubts-answered"
+                    id="client-doubts-answered"
+                  />
+                  <label for="client-doubts-answered"
+                    >Todas as minhas dúvidas foram esclarecidas durante a
+                    mentoria.</label
+                  >
+                </div>
+              </div>
             </div>
           </fieldset>
+          <fieldset>
+            <div class="fieldset-wrapper">
+              <legend>Agendando próxima mentoria</legend>
+              <div class="col-3">
+                <div class="input-wrapper">
+                  <label for="client-date">Data <span>(mm/dd/yyyy)</span></label
+                  ><input
+                    type="date"
+                    name="client-date"
+                    title="client-date"
+                    id="client-date"
+                  />
+                </div>
+                <div class="input-wrapper">
+                  <label for="client-start">Das</label
+                  ><input
+                    type="time"
+                    name="client-start"
+                    title="client-start"
+                    id="client-start"
+                  />
+                </div>
+                <div class="input-wrapper">
+                  <label for="client-end">Até</label
+                  ><input
+                    type="time"
+                    name="client-end"
+                    title="client-end"
+                    id="client-end"
+                  />
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <button type="submit">Salvar</button>
         </form>
       </main>
     </div>
