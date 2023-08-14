@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avalie a sua mentoria</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="page">
+      <header>
+        <h1>Avalie a sua mentoria</h1>
+        <p>Chegou a hora de avaliar o seu mentor. Bora lá?</p>
+        <img
+          src="./assets/img/balao-de-avaliacao.svg"
+          alt="Balão de avaliação com a métrica de 0 a 5 sendo representadas por estrelinhas"
+        />
+      </header>
+      <main>
+        <header><h1>Informações pessoais</h1></header>
+        <form id="rate-metorship-form">
+          <fieldset>
+            <div class="fieldset-wrapper">
+              <div class="col-2">
+                <div class="input-wrapper">
+                  <label for="client-forename">Nome</label>
+                  <input class="input-half" type="text" id="client-forename" />
+                </div>
+                <div class="input-wrapper">
+                  <label for="client-surname">Sobrenome</label>
+                  <input type="text" id="client-surname" />
+                </div>
+              </div>
+              <div class="input-wrapper">
+                <label for="client-email"
+                  >Email <span>(digite um email válido)</span></label
+                >
+                <input type="email" id="client-email" />
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="fieldset-wrapper">
+              <legend>Informações do Mentor</legend>
+              <div class="col-2">
+                <div class="input-wrapper">
+                  <label for="client-mentor"
+                    >Selecione quem foi o seu mentor</label
+                  ><select
+                    name="client-mentor"
+                    title="client-mentor"
+                    id="client-mentor"
+                  >
+                    <option disabled></option>
+                    <option value="0">Prof. Antonio</option>
+                    <option value="1">Prof. Zenaide</option>
+                    <option value="2">Prof. Gabriela</option>
+                    <option value="3">Prof. Eduardo</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>
