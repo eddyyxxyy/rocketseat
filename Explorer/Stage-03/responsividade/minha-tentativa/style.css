@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: #090039;
+}
+
+body {
+  font-family: "Epilogue", sans-serif;
+  padding: 60px 25px;
+  background-color: #ece9fd;
+}
+
+header h1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #7158ef;
+  margin-bottom: 15px;
+}
+
+header section h2 {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 48px;
+  color: var(--text-color);
+  margin-bottom: 15px;
+}
+
+header section p {
+  color: rgba(10, 0, 57, 0.64);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  margin-bottom: 32px;
+}
+
+header section a {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  text-decoration: none;
+  color: var(--text-color);
+  margin-bottom: 72px;
+  transition: color ease-in 0.1s;
+}
+
+header section a:hover {
+  color: #09003994;
+}
+
+main section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 32px;
+  vertical-align: middle;
+}
+
+main section h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  color: var(--text-color);
+}
+
+main section .number {
+  display: block;
+  min-width: 80px;
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 80px;
+}
+
+@media only screen and (min-width: 1224px) {
+  body {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    padding: 80px 135px;
+  }
+
+  header {
+    width: 50%;
+  }
+}
