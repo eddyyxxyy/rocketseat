@@ -4,7 +4,93 @@
   box-sizing: border-box;
 }
 
-body {
+:root {
   font-family: "Source Serif 4", serif;
   font-size: 62.5%;
+}
+
+main {
+  padding: 5rem 4rem;
+  color: #a54328;
+}
+
+main > header {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  margin-bottom: 4rem;
+}
+
+main > :is(header, section) :is(h1, h2) {
+  font-size: 2.8rem;
+}
+
+main > header img {
+  max-width: 30rem;
+}
+
+main > header p,
+main > section :is(h3, p) {
+  font-size: 1.4rem;
+}
+
+main > section h2 {
+  margin-bottom: 3rem;
+}
+
+main > section :is(ul, ol) {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+main > section :is(ul, ol) li {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+}
+
+main > section button {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  padding: 1.2rem;
+  border: 0;
+  border-radius: 6px;
+  background-color: #a54328;
+  cursor: pointer;
+  transition: background ease-in 0.2s;
+}
+
+main > section button:hover {
+  background-color: #c46449;
+}
+
+@media (min-width: 1024px) {
+  body {
+    background-image: url(./img/textura-de-papel-antigo-bege.png);
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+    gap: 18rem;
+  }
+
+  main > header {
+    max-width: 35%;
+    margin: 0;
+  }
+
+  main > section {
+    width: 40%;
+  }
+
+  main > header p,
+  main > section :is(h3, p) {
+    font-size: 2rem;
+  }
+
+  main > section :is(ul, ol) li {
+    font-size: 2rem;
+    line-height: 2.2rem;
+  }
 }
