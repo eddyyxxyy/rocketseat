@@ -67,3 +67,108 @@ As propriedades essenciais são essas:
 - `grid-area`.
 
 Basicamente informamos ao navegador, que está processando os estilos, onde queremos, em relação à coluna e linha, que nosso item fique, de onde até onde ele irá.
+
+Podemos então utilizar em conjunto com o `grid-template-areas`, no container pai, o `grid-areas`, nos filhos. Assuma a seguinte estrutura HTML e o respectivo CSS:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentos do Grid</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>1</header>
+      <main>2</main>
+      <aside>3</aside>
+      <footer>4</footer>
+    </div>
+  </body>
+</html>
+```
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:not(#app, body) {
+  border: 1px solid red;
+}
+
+#app {
+  display: grid;
+  grid-template:
+    "header header header"
+    "main main aside"
+    "footer footer footer";
+  gap: 20px;
+}
+
+#app header {
+  grid-area: header;
+}
+
+#app main {
+  grid-area: main;
+}
+
+#app footer {
+  grid-area: footer;
+}
+```
+
+Assim teriamos o seguinte resultado:
+
+![Exemplo de uso da propriedade grid-template em HTML e CSS](./img/exemplo-de-grid-template.png)
+
+### Propriedades de alinhamento
+
+Existem 9 propriedades de alinhamento fundamentais:
+
+Aplicadas em Containers (pai):
+
+- `align-content`;
+- `justify-content`;
+- `place-content`;
+
+- `align-items`;
+- `justify-items`;
+- `place-items`.
+
+Aplicadas em itens (filho):
+
+- `align-self`;
+- `justify-self`;
+- `place-self`.
+
+E então podemos separar em três grupos: `align` (eixo _y_, vertical), `justify` (eixo _x_, horizontal) e `place` (_ambos_ os eixos, vertical e horizontal).
+
+Dessa forma, deve-se destacar que cada um deles vai, respectivamente, observar o:
+
+- Conteúdo do elemento `content` (todas as caixas de conteúdo);
+- Items do elemento `items` (os elementos dentro das caixas de conteúdo);
+- O próprio elemento `self` (o próprio elemento).
+
+### Propriedades Auto
+
+Temos três:
+
+- `grid-auto-flow` (para definir se o fluxo será em rows ou columns);
+- `grid-auto-rows` (para definir os tamanhos de cada row);
+- `grid-auto-columns` (para definir os tamanhos de cada column).
+
+São raramente usadas, com destaque de uso para a primeira.
+
+## Grid ou Flex
+
+Qual devemos utilizar? _Aquele que dominamos mais, o que resolverá nosso problema_.
+
+A esta altura já podemos notar que chegamos nos "mesmos" resultados utilizando técnicas diferentes e devemos sempre optar para aquilo que parece se encaixar mais em nosso contexto.
+
+Contexto este que, dada a aplicação que será desenvolvida, é relativo ao que você domina melhor e a simplicidade que será adotada para a construção do layout.
