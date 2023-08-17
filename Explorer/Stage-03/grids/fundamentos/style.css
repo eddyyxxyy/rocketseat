@@ -11,19 +11,21 @@
 #app {
   height: 100vh;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template:
+    "header header header"
+    "main main aside"
+    "footer footer footer";
+  gap: 20px;
 }
 
 #app header {
-  grid-column-start: 1;
-  grid-column-end: 4;
+  grid-area: header;
 }
 
 #app main {
-  grid-column: 1/3;
+  grid-area: main;
 }
 
 #app footer {
-  grid-column: 1/4;
+  grid-area: footer;
 }

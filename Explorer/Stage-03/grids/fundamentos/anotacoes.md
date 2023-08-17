@@ -64,5 +64,6 @@ As propriedades essenciais são essas:
 - `grid-row`:
   - `grid-row-start`;
   - `grid-row-end`.
+- `grid-area`.
 
 Basicamente informamos ao navegador, que está processando os estilos, onde queremos, em relação à coluna e linha, que nosso item fique, de onde até onde ele irá.
