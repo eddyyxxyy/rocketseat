@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --brand-color: #065e7c;
+  --brand-background-color: #f4fcff;
+  --heading-color: #202024;
+  --text-color: #121214;
+}
+
+body,
+input {
+  font-family: "Mulish", sans-serif;
+  font-size: 1.6rem;
+}
+
+#app {
+  background-color: var(--brand-background-color);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  background-color: var(--brand-color);
+  padding: 1.2rem 2.8rem;
+}
+
+header .logo {
+  width: 3.8rem;
+  height: 3.8rem;
+}
+
+#search {
+  height: 4rem;
+  font-weight: 600;
+  padding: 1.4rem 1.2rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#search::placeholder {
+  color: #fff;
+}
+
+header form .input-wrapper label {
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+
+header .avatar {
+  width: 4.2rem;
+  border-radius: 50%;
+}
+
+#featured-image img {
+  width: 100%;
+}
+
+#post-content,
+aside {
+  padding: 3.2rem 2.4rem 2.4rem;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 3.8rem;
+}
+
+#review button {
+  display: inline-flex;
+  margin: 0.8rem 1.2rem 3.2rem 0;
+  padding: 1.2rem;
+  border: 0;
+  border-radius: 50%;
+  background-color: var(--brand-color);
+}
+
+footer {
+  background-color: var(--brand-color);
+}
