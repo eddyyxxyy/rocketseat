@@ -1,0 +1,37 @@
+body {
+  background-color: mediumpurple;
+}
+
+#square {
+  width: 4rem;
+  height: 4rem;
+  background-color: white;
+  opacity: 0.6;
+  animation-name: move, blink; /* Nome da animação */
+  animation-duration: 1s; /* Duração da animação */
+  animation-fill-mode: both; /* Mudanças que a animação faz no elemento */
+  animation-direction: alternate; /* Forma que a animação começará e terminará */
+  animation-iteration-count: infinite; /* Quantas vezes acontecerão iterações na animação */
+  animation-delay: 2s; /* Tempo até o início da animação */
+  animation-timing-function: ease-in; /* Em quantas etapas a movimentação da animação acontecerá */
+}
+
+#square:hover {
+  animation-play-state: paused;
+}
+
+@keyframes move {
+  100% {
+    transform: translateX(calc(100vw - 100% - 16px));
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 1;
+  }
+}
