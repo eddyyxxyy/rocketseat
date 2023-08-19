@@ -31,16 +31,21 @@ header {
   padding: 1.2rem 2.8rem;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 header .logo {
   width: 3.8rem;
   height: 3.8rem;
+  --start-Y: -150%;
+  animation: slide-down-or-up 0.5s ease-in forwards;
 }
 
 header form {
   display: flex;
   flex: 1;
+  --start-Y: -150%;
+  animation: slide-down-or-up 0.5s ease-in forwards;
 }
 
 header .input-wrapper {
@@ -72,15 +77,36 @@ header form .input-wrapper label {
 header .avatar {
   width: 4.2rem;
   border-radius: 50%;
+  --start-Y: -150%;
+  animation: slide-down-or-up 0.5s ease-in forwards;
 }
 
 #post {
   margin-bottom: 3.4rem;
 }
 
+main img {
+  --start-appear: 1.2s;
+  animation: appear var(--start-appear);
+}
+
+aside img {
+  transition: all ease-in 0.1s;
+}
+
+aside img:hover {
+  filter: contrast(110%);
+  transform: scale(1.1);
+}
+
 #featured-image img {
   width: 100%;
   margin-bottom: 3.2rem;
+  transition: all 0.4s ease-in-out;
+}
+
+#featured-image img:hover {
+  filter: contrast(1.1) brightness(1.1);
 }
 
 #post-content,
@@ -101,6 +127,10 @@ h1 {
   border: 0;
   border-radius: 50%;
   background-color: var(--brand-color);
+}
+
+#review button:hover {
+  animation: grow ease-out 0.1s both;
 }
 
 #post-content p:first-of-type {
@@ -143,6 +173,14 @@ footer {
   color: #fff;
   padding: 1.6rem 2.6rem;
   background-color: var(--brand-color);
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+}
+
+footer p {
+  --start-Y: 200%;
+  animation: slide-down-or-up 0.5s ease-in forwards;
 }
 
 @media (min-width: 1024px) {
@@ -166,12 +204,62 @@ footer {
     margin-bottom: 4rem;
   }
 
+  #post-content {
+    padding-left: 0;
+  }
+
+  .post-content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3.2rem;
+  }
+
+  #review {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  #review button {
+    margin: 0;
+  }
+
   aside {
     grid-area: aside;
     padding: 0 11.2rem 0 3.4rem;
   }
 
+  .related-post {
+    --start-appear: 1.2s;
+    animation: appear var(--start-appear);
+  }
+
   footer {
     grid-area: footer;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes grow {
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes slide-down-or-up {
+  from {
+    transform: translateY(var(--start-Y));
   }
 }
