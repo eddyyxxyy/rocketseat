@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  font-family: "Mulish", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f9f4fb;
+}
+
+header {
+  text-align: center;
+  padding: 0 3rem;
+  margin-bottom: 10rem;
+}
+
+.img-wrapper img {
+  width: 100%;
+  margin-bottom: 1.7rem;
+}
+
+#header-info h1,
+#form-content h1 {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: #b52184;
+}
+
+#header-info p {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #312d64;
+  margin-bottom: 3.5rem;
+}
+
+#header-info nav a img {
+  width: 6rem;
+}
+
+main {
+  padding: 5rem 3rem;
+  background: linear-gradient(134deg, #343193 0%, #302c63 100%);
+}
+
+.card {
+  padding: 2.5rem;
+  border-radius: 2rem;
+  background-color: #fff;
+}
+
+.card + .card {
+  margin-top: 5rem;
+}
+
+.card img {
+  width: 8rem;
+  margin-bottom: 2rem;
+}
+
+.card h2 {
+  width: 90%;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #b52184;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  width: 90%;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #312d64;
+}
+
+footer {
+  padding: 1.6rem 3.2rem;
+  background: linear-gradient(134deg, #343193 0%, #302c63 100%);
+}
+
+footer p {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+
+aside {
+  padding: 6.5rem 4rem;
+}
+
+fieldset {
+  border: 0;
+}
+
+fieldset legend {
+  color: #b52184;
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 4rem;
+}
+
+fieldset label {
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+
+fieldset :is(input, input::placeholder, textarea, textarea::placeholder) {
+  width: 100%;
+  font-size: 1.6rem;
+  font-family: "Mulish", sans-serif;
+}
+
+fieldset input[name="name"]::before {
+  content: "";
+}
