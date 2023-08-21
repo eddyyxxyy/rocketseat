@@ -46,7 +46,7 @@
           contínua é a chave para o progresso e a conquista de seus objetivos.
         </p>
       </div>
-      <div class="card">
+      <div class="card" style="--startX: 2.5s">
         <img
           src="./assets/svg/blue-planet.svg"
           alt="Ilustração de um planeta azul"
@@ -58,7 +58,7 @@
           mudar, ou podemos nos sentir desmotivados ou sobrecarregados.
         </p>
       </div>
-      <div class="card">
+      <div class="card" style="--startX: 3.75s">
         <img
           src="./assets/svg/pink-planet.svg"
           alt="Ilustração de um planeta rosa"
@@ -76,7 +76,7 @@
       <form>
         <fieldset>
           <legend>Entre em contato</legend>
-          <label for="name">Seu nome</label>
+          <label for="name"><span>Seu nome</span></label>
           <input
             id="name"
             name="name"
@@ -84,7 +84,7 @@
             placeholder="Seu nome"
             required
           />
-          <label for="email">Email</label>
+          <label for="email"><span>Email</span></label>
           <input
             type="email"
             name="email"
@@ -92,13 +92,17 @@
             placeholder="Email"
             required
           />
-          <label for="message">Digite sua mensagem aqui...</label>
+          <label for="message"><span>Digite sua mensagem aqui...</span></label>
           <textarea
             name="message"
             id="message"
+            rows="5"
             placeholder="Digite sua mensagem aqui..."
           ></textarea>
         </fieldset>
+        <button type="submit" title="submit-contact-form">
+          Enviar Mensagem
+        </button>
       </form>
     </aside>
     <footer><p>© 2023 - Rocketseat Explorer</p></footer>
