@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo da Advinhação</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&family=Montserrat:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <main>
+        <h1>Jogo da Advinhação</h1>
+        <form method="post">
+          <fieldset>
+            <label for="guess">Advinhe um número de 0 a 10</label>
+            <input
+              type="number"
+              name="guess"
+              id="guess"
+              min="0"
+              max="10"
+              required
+              placeholder="6"
+            /><button type="submit" id="try">Tentar</button>
+          </fieldset>
+        </form>
+      </main>
+    </div>
+    <script src="./scripts.js"></script>
+  </body>
+</html>
