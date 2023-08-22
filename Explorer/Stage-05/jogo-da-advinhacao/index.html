@@ -16,14 +16,22 @@
     <div id="app">
       <main>
         <h1>Jogo da Advinhação</h1>
-        <p>Advinhe o número entre 0 e 10</p>
-        <form action="#">
+        <form method="post">
           <fieldset>
-            <input type="number" name="guess" id="guess" />
-            <button type="submit" id="try">Tentar</button>
+            <label for="guess">Advinhe um número de 0 a 10</label>
+            <input
+              type="number"
+              name="guess"
+              id="guess"
+              min="0"
+              max="10"
+              required
+              placeholder="6"
+            /><button type="submit" id="try">Tentar</button>
           </fieldset>
         </form>
       </main>
     </div>
+    <script src="./scripts.js"></script>
   </body>
 </html>
