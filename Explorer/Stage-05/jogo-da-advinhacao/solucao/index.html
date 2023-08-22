@@ -13,25 +13,19 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div id="app">
-      <main>
+    <main>
+      <div class="screen1 hide">
         <h1>Jogo da Advinhação</h1>
-        <form method="post">
-          <fieldset>
-            <label for="guess">Advinhe um número de 0 a 10</label>
-            <input
-              type="number"
-              name="guess"
-              id="guess"
-              min="0"
-              max="10"
-              required
-              placeholder="6"
-            /><button type="submit" id="try">Tentar</button>
-          </fieldset>
+        <p>Advinhe um número entre 0 e 10</p>
+        <form>
+          <input type="number" min="0" max="10" required />
+          <button>Tentar</button>
         </form>
-      </main>
-    </div>
-    <script src="./scripts.js"></script>
+      </div>
+      <div class="screen2">
+        <h2>Acertou em 3 tentativas!</h2>
+        <button>Jogar novamente</button>
+      </div>
+    </main>
   </body>
 </html>
