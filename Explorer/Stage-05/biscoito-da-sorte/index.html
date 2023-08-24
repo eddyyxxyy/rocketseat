@@ -14,10 +14,10 @@
   </head>
   <body>
     <main>
-      <div class="screen1 hide">
+      <div class="screen1">
         <h1>Qual é a sua sorte de hoje?</h1>
         <p>Abra o biscoito e descubra!</p>
-        <a href="#">
+        <a id="crackFortuneCookie">
           <div class="img-wrapper">
             <img
               src="./assets/img/biscoito-da-sorte.svg"
@@ -26,7 +26,7 @@
           </div>
         </a>
       </div>
-      <div class="screen2">
+      <div class="screen2 hide">
         <h2 class="h1">Aqui está a sua sorte de hoje:</h2>
         <div class="good-luck-message">
           <p>
@@ -40,8 +40,9 @@
             alt="Ilustração colorida de um biscoito da sorte aberto, mostrando sua mensagem"
           />
         </div>
-        <button>Abrir outro biscoito</button>
+        <button id="openAnother">Abrir outro biscoito</button>
       </div>
     </main>
+    <script src="./main.js"></script>
   </body>
 </html>
