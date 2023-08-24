@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cálculo de IMC</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Cálculo de IMC</h1>
+      <form method="dialog">
+        <fieldset>
+          <div class="input-wrapper">
+            <label for="weight">Peso (kg)</label>
+            <input
+              type="number"
+              name="weight"
+              title="Informe seu peso em quilogramas"
+              id="weight"
+              placeholder="40"
+              min="15"
+              max="350"
+              required
+              autofocus
+            />
+          </div>
+          <div class="input-wrapper">
+            <label for="height">Altura (cm)</label>
+            <input
+              type="number"
+              name="height"
+              title="Informe sua altura em centímetros"
+              id="height"
+              placeholder="160"
+              min="50"
+              max="250"
+              required
+            />
+          </div>
+        </fieldset>
+        <button type="submit" name="btnSubmit" title="Realizar cálculo de IMC">
+          <span> Calcular IMC </span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="17"
+            height="16"
+            viewBox="0 0 17 16"
+            fill="none"
+          >
+            <path
+              d="M3.1685 8.26205L14.3589 8.26213M14.3589 8.26213L9.64488 3.54808M14.3589 8.26213L9.64488 12.9762"
+              stroke="white"
+              stroke-width="1.20972"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </form>
+    </main>
+    <dialog class="modal-result">
+      <div class="modal-result-content">
+        <h2>Seu IMC é de <span>28</span></h2>
+        <form>
+          <button
+            type="submit"
+            title="Clique aqui para realizar outros cálculos"
+          >
+            Calcular novamente
+          </button>
+        </form>
+      </div>
+    </dialog>
+    <dialog class="modal-error">
+      <div class="modal-error-content">
+        <h3>Ocorreu um erro, por favor verifique os dados e tente novamente</h3>
+      </div>
+    </dialog>
+    <script src="./main.js"></script>
+  </body>
+</html>
