@@ -1,0 +1,86 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  background: linear-gradient(45deg, #190361 0%, #b0f 100%) center no-repeat;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+main {
+  background-color: #fff;
+  text-align: center;
+  padding-top: clamp(2.4rem, 1.5vw + 2.4rem, 4.8rem);
+  padding-right: clamp(1rem, 0.5vw + 1.25rem, 6.4rem);
+  padding-left: clamp(1rem, 0.5vw + 1.25rem, 6.4rem);
+  padding-bottom: clamp(2.4rem, 1.6vw + 2.4rem, 6.4rem);
+  border-radius: 0.5rem;
+  box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.8);
+  max-width: 60rem;
+  margin: 1rem;
+}
+
+.hide {
+  display: none;
+}
+
+h1,
+.h1 {
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(0.9rem, 2vw + 1rem, 2.4rem);
+  color: #34355b;
+  width: 75%;
+  margin-bottom: 1.4rem;
+}
+
+.screen1 p,
+.screen2 button {
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(0.8rem, 1vw + 0.8rem, 1.5rem);
+}
+
+.screen1 p {
+  color: #34355b;
+  margin-bottom: 2.6rem;
+}
+
+.screen2 button {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.good-luck-message {
+  display: inline-block;
+  background: #e4edf1;
+  box-shadow: 2px 2px 2px 0px rgba(85, 85, 85, 0.5);
+  width: 55%;
+  padding: 1rem;
+  margin-bottom: clamp(1.6rem, 2vh + 1.6rem, 6rem);
+}
+
+.good-luck-message p {
+  font-family: "Dancing Script", cursive;
+  font-size: clamp(0.9rem, 2vw + 0.8rem, 2.4rem);
+}
+
+:is(.screen1, .screen2) .img-wrapper {
+  display: inline-block;
+  width: clamp(50%, 75%, 100%);
+}
+
+.screen1 .img-wrapper img {
+  width: 100%;
+}
+
+.screen2 .img-wrapper img {
+  width: 65%;
+}
