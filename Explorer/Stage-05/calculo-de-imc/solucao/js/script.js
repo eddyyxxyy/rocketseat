@@ -1,21 +1,26 @@
-import { Modal } from "./modal.js";
+import { AlertError } from "./AlertError.js";
+import { notNumber, calculateIMC, displayResultMessage } from "./utils.js";
 
 const form = document.querySelector("form");
 const inputWeight = document.querySelector("#weight");
 const inputHeight = document.querySelector("#height");
 
-form.onsubmit = (event) => {
+form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const weight = inputWeight.value;
   const height = inputHeight.value;
-  const result = IMC(weight, height);
-  const message = `Seu IMC é de ${result}`;
 
-  Modal.message.innerText = message;
-  Modal.toggle();
-};
+  if (notNumber(weight) || notNumber(height)) {
+    AlertError.open();
+    return false;
+  }
 
-function IMC(weight, height) {
-  return (weight / (height / 100) ** 2).toFixed(2);
-}
+  AlertError.close();
+
+  const result = calculateIMC(weight, height);
+  displayResultMessage(result);
+});
+
+inputHeight.oninput = () => AlertError.close();
+inputWeight.oninput = () => AlertError.close();

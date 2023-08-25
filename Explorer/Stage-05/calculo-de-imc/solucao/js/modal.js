@@ -1,6 +1,9 @@
 export const Modal = {
-  toggle() {
-    this.wrapper.classList.toggle("open");
+  open() {
+    this.wrapper.classList.add("open");
+  },
+  close() {
+    this.wrapper.classList.remove("open");
   },
   isOpen() {
     return this.wrapper.classList.contains("open");
@@ -10,12 +13,12 @@ export const Modal = {
   btnClose: document.querySelector(".modal button.close"),
 };
 
-Modal.btnClose.onclick = () => Modal.toggle();
+Modal.btnClose.onclick = () => Modal.close();
 
 window.addEventListener("keydown", handleKeyDown);
 
 function handleKeyDown(event) {
   if (event.key === "Escape" && Modal.isOpen()) {
-    Modal.toggle();
+    Modal.close();
   }
 }
