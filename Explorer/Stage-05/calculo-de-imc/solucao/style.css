@@ -1,0 +1,165 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --tt-heading: #0c3440;
+  --tt-label: #00453a;
+  --tt-input: #212529;
+  --ot-input: #02799d;
+  --bd-input: rgba(73, 80, 87, 0.3);
+  --bg-input: #dce2e9;
+  --tt-placeholder: rgba(73, 80, 87, 0.5);
+  --tt-button: #fff;
+  --bg-button: #02799d;
+  --bg-button-hover: #01475c;
+  --bg-error: #f03e3e;
+  --tt-error: #fff;
+}
+
+body {
+  background-color: #040924;
+  font-family: "Roboto", sans-serif;
+}
+
+body,
+input,
+button {
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.container {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  padding: 1.6rem;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 0.6rem;
+  padding: 4.8rem 6.4rem 6.4rem;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  max-width: 42.8rem;
+  margin-inline: auto;
+}
+
+.title {
+  font-size: 3.2rem;
+  line-height: 4rem;
+}
+
+form {
+  max-width: 30rem;
+}
+
+form h1 {
+  color: var(--tt-heading);
+  margin-bottom: 3.2rem;
+}
+
+form label {
+  display: inline-block;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  color: var(--tt-label);
+  margin-bottom: 0.8rem;
+}
+
+form input {
+  background-color: var(--bg-input);
+  padding: 1.6rem;
+  border: 1px solid var(--bd-input);
+  border-radius: 0.4rem;
+  width: 100%;
+}
+
+form input:focus {
+  outline: 2px solid var(--ot-input);
+}
+
+form input::placeholder {
+  color: var(--tt-placeholder);
+}
+
+.input-wrapper + .input-wrapper {
+  margin-top: 1.6rem;
+}
+
+form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  background-color: var(--bg-button);
+  font-weight: bold;
+  color: var(--tt-button);
+  padding: 1.6rem;
+  border: 0;
+  border-radius: 0.4rem;
+  margin-top: 3.2rem;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s ease-out;
+}
+
+form button:hover {
+  background-color: var(--bg-button-hover);
+}
+
+:is(.modal-wrapper, .alert-error).open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-wrapper {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal {
+  position: relative;
+}
+
+.modal button {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-out;
+}
+
+.modal button:hover {
+  transform: scale(1.1);
+}
+
+.alert-error.open {
+  transform: translateY(0);
+}
+
+.alert-error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-error);
+  font-weight: bold;
+  text-align: center;
+  color: var(--tt-error);
+  padding: 0.8rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-30px);
+  transition: transform 0.5s ease-in-out;
+}
