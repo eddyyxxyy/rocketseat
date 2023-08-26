@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="./assets/svg/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="./assets/img/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" src="./js/main.js"></script>
+    <title>Focus Timer</title>
+  </head>
+  <body>
+    <main>
+      <div id="time-schedule">
+        <form>
+          <div id="input-wrapper">
+            <label for="minutes">Minutes</label>
+            <input
+              type="number"
+              name="minutes"
+              id="minutes"
+              title="Enter how many minutes you want to schedule"
+              value="25"
+              max="60"
+              min="1"
+            />
+          </div>
+        </form>
+        <span>:</span>
+        <div id="seconds-wrapper">
+          <span>00</span>
+        </div>
+      </div>
+      <div id="schedule-controls">
+        <img
+          src="./assets/svg/play-circle.svg"
+          alt="Play button icon"
+          title="Click here to start the countdown"
+        />
+        <img
+          src="./assets/svg/timer.svg"
+          alt="Timer button icon"
+          title="Click here to reset the timer"
+        />
+        <img
+          src="./assets/svg/speaker-muted.svg"
+          alt="Muted speaker icon"
+          title="Click here to unmute the speaker"
+        />
+      </div>
+    </main>
+  </body>
+</html>

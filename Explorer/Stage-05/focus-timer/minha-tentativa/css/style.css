@@ -1,0 +1,85 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --app-bg: #121214;
+  --txt-color: #f8f8fc;
+  --ctrl-bg: #242424;
+}
+
+.light {
+  --app-bg: #f8f8fc;
+  --txt-color: #121214;
+}
+
+body,
+input {
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(4rem, -0.2038rem + 24.0214vw, 9.6rem);
+  color: var(--txt-color);
+}
+
+body {
+  background-color: var(--app-bg);
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+#time-schedule,
+#schedule-controls {
+  display: flex;
+  place-items: center;
+  place-content: center;
+}
+
+#input-wrapper label {
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+
+#input-wrapper input {
+  background: none;
+  border: none;
+  max-width: clamp(5rem, 0.496rem + 25.7373vw, 11rem);
+}
+
+#input-wrapper input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+#input-wrapper input[type="number"]::-webkit-inner-spin-button,
+#input-wrapper input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+#input-wrapper input:focus {
+  outline: none;
+}
+
+#schedule-controls {
+  background-color: var(--ctrl-bg);
+  gap: 1.6rem;
+  padding: clamp(1rem, 0.0992rem + 5.1475vw, 2.2rem)
+    clamp(1rem, -1.252rem + 12.8686vw, 4rem);
+  border-radius: 999rem;
+}
+
+#schedule-controls img {
+  cursor: pointer;
+  transition: all 0.15s ease-out;
+  width: clamp(3.2rem, 0.7979rem + 13.7265vw, 6.4rem);
+}
+
+#schedule-controls img:hover {
+  filter: brightness(0.8);
+  transform: scale(1.1);
+}
