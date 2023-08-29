@@ -12,13 +12,18 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/main.js" defer></script>
     <title>Focus Timer</title>
   </head>
   <body>
     <main>
+      <button
+        type="button"
+        title="Switch to light mode"
+        id="toggle-mode"
+      ></button>
       <div id="time-schedule">
-        <form>
+        <form id="timer-form">
           <div id="input-wrapper">
             <label for="minutes">Minutes</label>
             <input
@@ -27,32 +32,33 @@
               id="minutes"
               title="Enter how many minutes you want to schedule"
               value="25"
-              max="60"
-              min="1"
             />
           </div>
         </form>
         <span>:</span>
         <div id="seconds-wrapper">
-          <span>00</span>
+          <span title="Seconds remaining">00</span>
         </div>
       </div>
       <div id="schedule-controls">
-        <img
-          src="./assets/svg/play-circle.svg"
-          alt="Play button icon"
+        <button
+          type="submit"
           title="Click here to start the countdown"
-        />
-        <img
-          src="./assets/svg/timer.svg"
-          alt="Timer button icon"
-          title="Click here to reset the timer"
-        />
-        <img
-          src="./assets/svg/speaker-muted.svg"
-          alt="Muted speaker icon"
-          title="Click here to unmute the speaker"
-        />
+          form="timer-form"
+          id="start-pause-button"
+        >
+          <img
+            src="./assets/svg/play-circle.svg"
+            alt="Play button icon"
+            id="start-pause-icon"
+          />
+        </button>
+        <button type="reset" title="Click here to reset the timer">
+          <img src="./assets/svg/timer.svg" alt="Timer button icon" />
+        </button>
+        <button type="button" title="Click here to unmute the speaker">
+          <img src="./assets/svg/speaker-muted.svg" alt="Muted speaker icon" />
+        </button>
       </div>
     </main>
   </body>
