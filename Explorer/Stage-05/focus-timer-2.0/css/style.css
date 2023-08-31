@@ -96,8 +96,17 @@ button {
   transition: transform 0.1s ease-out;
 }
 
-button:hover {
+#controls button:hover,
+#toggle-mode button:hover {
   transform: scale(1.1);
+}
+
+#theme button:hover {
+  transform: scale(1.02);
+}
+
+#theme button.active {
+  animation: gentle-float 3s ease-in-out infinite;
 }
 
 #app {
@@ -162,5 +171,17 @@ main {
 
   main {
     margin-bottom: clamp(4rem, 4% + 8vh, 6.8rem);
+  }
+}
+
+@keyframes gentle-float {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
   }
 }

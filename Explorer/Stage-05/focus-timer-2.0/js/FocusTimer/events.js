@@ -4,6 +4,7 @@ import * as timer from "./timer.js";
 import sounds from "./sounds.js";
 
 controls.addEventListener("click", (event) => {
+  sounds.clickSound.currentTime = 0;
   sounds.clickSound.volume = 0.2;
   sounds.clickSound.play();
   switch (event.target.id) {
