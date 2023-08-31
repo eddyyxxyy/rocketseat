@@ -1,0 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+
+body {
+  background: url(../assets/img/mountains-universe-1.png) no-repeat center /
+    cover;
+  height: 100vh;
+  font-size: 1.8rem;
+}
