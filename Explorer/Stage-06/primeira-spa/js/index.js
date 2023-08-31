@@ -10,4 +10,4 @@ router.addRoute(404, "/pages/404.html");
 router.handleRoute();
 
 window.router = () => router.getRoute();
-window.onpopstate = () => handleRoute();
+window.onpopstate = () => router.handleRoute();
