@@ -11,7 +11,7 @@
   --theme-highlight-hue: 194;
   --theme-highlight-x: 97%;
   --theme-highlight-y: 31%;
-  font-size: clamp(25%, 1% + 2vw, 62.5%);
+  font-size: clamp(25%, 1% + 1vw, 62.5%);
   font-family: sans-serif;
 }
 
@@ -129,7 +129,7 @@ main {
   display: flex;
   word-wrap: unset;
   font-size: 12.6rem;
-  margin-bottom: clamp(1rem, 1% + 2vh, 1.7rem);
+  margin-bottom: clamp(1rem, 1% + 1vh, 1.7rem);
 }
 
 #controls {
@@ -154,7 +154,7 @@ main {
   border-radius: 2rem;
 }
 
-@media (max-width: 830px) {
+@media (max-width: 825px) {
   #app {
     grid-template-columns: 1fr;
     gap: 0;

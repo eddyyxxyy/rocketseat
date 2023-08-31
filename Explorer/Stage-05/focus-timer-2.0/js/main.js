@@ -1,4 +1,6 @@
 import "./toggleMode.js";
-import chooseTheme from "./Themes/index.js";
+import InitializeTimer from "./FocusTimer/index.js";
+import ChooseTheme from "./Themes/index.js";
 
-chooseTheme();
+InitializeTimer();
+ChooseTheme();
