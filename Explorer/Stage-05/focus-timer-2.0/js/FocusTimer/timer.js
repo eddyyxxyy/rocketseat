@@ -73,12 +73,6 @@ export function countdown() {
     return;
   }
 
-  console.log(
-    minutes,
-    seconds,
-    currentMinutes.textContent,
-    currentSeconds.textContent
-  );
   updateDisplay(minutes, seconds);
 
   setTimeout(() => countdown(), 1000);

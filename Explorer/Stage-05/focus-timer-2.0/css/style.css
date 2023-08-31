@@ -134,6 +134,10 @@ main {
   white-space: nowrap;
 }
 
+span {
+  cursor: default;
+}
+
 #timer {
   display: flex;
   word-wrap: unset;
