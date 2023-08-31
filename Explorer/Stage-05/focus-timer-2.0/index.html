@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-svg" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script type="module" src="./js/main.js" defer></script>
+    <title>Focus Timer 2.0 - Pomodoro</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="toggle-mode">
+        <button
+          type="button"
+          class="ph-bold ph-moon"
+          title="Ativar modo escuro"
+        ></button>
+        <button
+          type="button"
+          class="ph-bold ph-sun"
+          title="Ativar modo claro"
+        ></button>
+      </div>
+      <main>
+        <div id="timer">
+          <span id="minutes">00</span>
+          <span>:</span>
+          <span id="seconds">00</span>
+        </div>
+        <div id="controls">
+          <button
+            type="button"
+            class="ph ph-play-circle"
+            title="Iniciar cronometro"
+          ></button>
+          <button
+            type="button"
+            class="ph ph-stop-circle"
+            title="Pausar cronometro"
+          ></button>
+          <button
+            type="button"
+            class="ph ph-plus-circle"
+            title="Adicionar 5 minutos ao cronometro"
+          ></button>
+          <button
+            type="button"
+            class="ph ph-minus-circle"
+            title="Remover 5 minutos do cronometro"
+          ></button>
+        </div>
+      </main>
+      <aside>
+        <div id="theme">
+          <button
+            type="button"
+            class="ph ph-tree"
+            title="Mudar o tema para 'Floresta'"
+            id="forest"
+          ></button>
+          <button
+            type="button"
+            class="ph ph-cloud-snow"
+            title="Mudar tema para 'Chuvoso'"
+            id="rainy"
+          ></button>
+          <button
+            type="button"
+            class="ph ph-storefront"
+            title="Mudar tema para 'Cafeteria'"
+            id="cafeteria"
+          ></button>
+          <button
+            type="button"
+            class="ph ph-fire"
+            title="Mudar tema para 'Lareira'"
+            id="fireplace"
+          ></button>
+        </div>
+      </aside>
+    </div>
+  </body>
+</html>
