@@ -1,19 +1,14 @@
 import state from "./state.js";
-import * as el from "./elements.js";
-import * as sounds from "./sounds.js";
+import { startTheme, stopTheme } from "./utils.js";
+import { themes } from "./elements.js";
 
 export function setTheme() {
-  el.themes.addEventListener("click", (event) => {
-    if (state.theme != event.target.id) {
-      sounds[state.theme].pause();
+  themes.addEventListener("click", (event) => {
+    if (state.currentTheme === event.target.id && !state.isMute) {
+      stopTheme(event.target.id);
+    } else {
+      stopTheme(state.currentTheme);
+      startTheme(event.target.id);
     }
-    for (const button in el.buttons) {
-      if (state.theme != event.target.id) {
-        console.log(el.buttons[button]);
-      }
-    }
-    state.theme = event.target.id;
-    sounds[state.theme].play();
-    event.target.classList.toggle("active");
   });
 }

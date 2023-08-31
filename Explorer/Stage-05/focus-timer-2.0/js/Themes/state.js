@@ -1,3 +1,4 @@
 export default {
-  theme: "forest",
+  currentTheme: null,
+  isMute: true,
 };
