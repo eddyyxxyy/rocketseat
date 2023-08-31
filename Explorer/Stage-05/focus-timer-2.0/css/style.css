@@ -30,6 +30,11 @@ html.dark #theme {
   --text-color: hsl(240, 6%, 21%);
 }
 
+html:not(.running) #pause,
+html.running #play {
+  display: none;
+}
+
 #theme #forest.active {
   --theme-highlight-hue: 90;
   --theme-highlight-x: 60%;
