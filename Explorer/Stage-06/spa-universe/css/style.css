@@ -6,6 +6,7 @@
 
 :root {
   --text-color: #e1e1e6;
+  --text-blue-highlight: #02799d;
   --link-color: #8d8d99;
   --link-active-color: #fff;
   font-size: clamp(40%, 1% + 2vw, 62.5%);
@@ -51,6 +52,7 @@ nav {
 
 nav #logo {
   min-width: 4rem;
+  animation: floating 2s ease-in-out infinite;
 }
 
 nav #logo img {
@@ -66,6 +68,12 @@ nav ul {
 a {
   color: var(--link-color);
   text-decoration: none;
+  transition: border-bottom 0.1s ease-out;
+}
+
+a:hover {
+  padding-bottom: 1rem;
+  border-bottom: 0.1rem #fff solid;
 }
 
 a.active {
@@ -74,19 +82,79 @@ a.active {
 
 #app {
   display: grid;
+  transition: all 1s ease-in-out;
+}
+
+.content-wrap {
+  display: flex;
+  flex-direction: column;
 }
 
 .content-wrap.center {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.content-wrap.center h1 {
+.content-wrap h1 {
   font-size: 4.8rem;
 }
 
-.content-wrap {
-  display: grid;
+.content-wrap.left {
+  width: 57%;
+  gap: 1.6rem;
+  margin-top: 6.5rem;
+}
+
+.content-wrap a button {
+  background-color: transparent;
+  padding: 1.2rem 3.2rem;
+  border: 0.2rem solid var(--link-active-color);
+  border-radius: 0.5rem;
+  margin-top: 2.4rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--link-active-color);
+  line-height: 2.4rem;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.content-wrap a button:hover {
+  background-color: var(--link-active-color);
+  color: var(--text-blue-highlight);
+}
+
+.grow-appear {
+  animation: grow-appear 1s forwards;
+}
+
+.slide-appear {
+  animation: slide-appear 1s forwards;
+}
+
+@keyframes grow-appear {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.7);
+  }
+}
+
+@keyframes slide-appear {
+  0% {
+    opacity: 0.5;
+    transform: translateX(-0.5rem);
+  }
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(0.25rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
