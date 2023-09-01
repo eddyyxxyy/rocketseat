@@ -7,4 +7,8 @@ router.addRoute("/o-universo", "/pages/o-universo.html");
 router.addRoute("/exploracao", "/pages/exploracao.html");
 router.addRoute(404, "/pages/404.html");
 
+router.addBackground("/", "home");
+router.addBackground("/o-universo", "o-universo");
+router.addBackground("/exploracao", "exploracao");
+
 router.handleRoute();

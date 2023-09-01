@@ -5,12 +5,44 @@
 }
 
 :root {
+  --text-color: #e1e1e6;
+  --link-color: #8d8d99;
+  --link-active-color: #fff;
   font-size: clamp(40%, 1% + 2vw, 62.5%);
 }
 
 body {
-  background: url(../assets/img/mountains-universe-1.png) no-repeat center /
-    cover;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
+  font-family: "Roboto", sans-serif;
   font-size: 1.8rem;
+  color: var(--text-color);
+  transition: background-image 0.5s ease-in-out;
+}
+
+body.home {
+  background-image: url(../assets/img/mountains-universe-1.png);
+}
+
+body.o-universo {
+  background-image: url(../assets/img/mountains-universe-2.png);
+}
+
+body.exploracao {
+  background-image: url(../assets/img/mountains-universe-3.png);
+}
+
+nav ul {
+  list-style: none;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a.active {
+  color: var(--link-active-color);
 }

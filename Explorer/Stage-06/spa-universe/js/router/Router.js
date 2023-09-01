@@ -1,6 +1,7 @@
 export default class Router {
   routes = {};
   app = document.querySelector("#app");
+  backgroundClasses = {};
 
   constructor() {
     this.preventRedirect();
@@ -8,6 +9,10 @@ export default class Router {
 
   addRoute(routeName, routePath) {
     this.routes[routeName] = routePath;
+  }
+
+  addBackground(routeName, backgroundClassName) {
+    this.backgroundClasses[routeName] = backgroundClassName;
   }
 
   getRoute(event) {
@@ -19,10 +24,21 @@ export default class Router {
   handleRoute() {
     const routePath = window.location.pathname;
     const route = this.routes[routePath] ?? this.routes[404];
-    console.log(route, routePath);
     fetch(route)
       .then((resp) => resp.text())
-      .then((html) => (this.app.innerHTML = html));
+      .then((html) => {
+        this.handleBackground(routePath);
+        this.app.innerHTML = html;
+      });
+  }
+
+  handleBackground(routePath) {
+    const backgroundClass =
+      this.backgroundClasses[routePath] ?? this.backgroundClasses["/"];
+
+    const body = document.querySelector("body");
+
+    body.className = backgroundClass;
   }
 
   preventRedirect() {
