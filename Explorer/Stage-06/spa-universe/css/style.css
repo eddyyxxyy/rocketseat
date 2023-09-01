@@ -12,9 +12,13 @@
 }
 
 body {
+  display: grid;
+  grid-template-rows: auto 1fr;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  padding-left: 7.2rem;
+  padding-right: 7.2rem;
   height: 100vh;
   font-family: "Roboto", sans-serif;
   font-size: 1.8rem;
@@ -34,8 +38,29 @@ body.exploracao {
   background-image: url(../assets/img/mountains-universe-3.png);
 }
 
+.flex {
+  display: flex;
+}
+
+nav {
+  align-items: center;
+  gap: 4rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+nav #logo {
+  min-width: 4rem;
+}
+
+nav #logo img {
+  width: 100%;
+}
+
 nav ul {
+  gap: 5rem;
   list-style: none;
+  font-size: 2.4rem;
 }
 
 a {
@@ -45,4 +70,23 @@ a {
 
 a.active {
   color: var(--link-active-color);
+}
+
+#app {
+  display: grid;
+}
+
+.content-wrap.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-wrap.center h1 {
+  font-size: 4.8rem;
+}
+
+.content-wrap {
+  display: grid;
 }
