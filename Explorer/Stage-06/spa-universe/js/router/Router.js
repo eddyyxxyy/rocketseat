@@ -1,7 +1,8 @@
 export default class Router {
   routes = {};
-  app = document.querySelector("#app");
   backgroundClasses = {};
+  app = document.querySelector("#app");
+  navLinks = document.querySelectorAll("nav ul li a");
 
   constructor() {
     this.preventRedirect();
@@ -27,6 +28,7 @@ export default class Router {
     fetch(route)
       .then((resp) => resp.text())
       .then((html) => {
+        this.handleNavActiveLink(routePath);
         this.handleBackground(routePath);
         this.app.innerHTML = html;
       });
@@ -39,6 +41,19 @@ export default class Router {
     const body = document.querySelector("body");
 
     body.className = backgroundClass;
+  }
+
+  handleNavActiveLink(routePath) {
+    this.navLinks.forEach((value) => {
+      if (value.classList.contains("active")) {
+        value.classList.remove("active");
+      } else if (
+        !value.classList.contains("active") &&
+        value.getAttribute("href") == routePath
+      ) {
+        value.classList.add("active");
+      }
+    });
   }
 
   preventRedirect() {
