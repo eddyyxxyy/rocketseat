@@ -14,10 +14,14 @@ searchInput.addEventListener("keydown", (event) => {
 searchButton.addEventListener("click", () => {
   const githubUsername = searchInput.value ? searchInput.value : null;
   if (checkInput(githubUsername)) {
-    const githubUser = GithubUser.getUser(githubUsername);
+    GithubUser.getUser(githubUsername);
   }
 });
 
 closeModal.addEventListener("click", () => {
   modalDialog.toggleAttribute("open");
+});
+
+window.addEventListener("load", () => {
+  GithubUser.retrieveUsersInStorage();
 });

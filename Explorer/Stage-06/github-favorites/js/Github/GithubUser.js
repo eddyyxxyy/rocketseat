@@ -1,6 +1,8 @@
 import { modalDialog, tBody } from "./elements.js";
 
 export default class GithubUser {
+  static usersIdsStored = [];
+
   static getUser(username) {
     fetch("https://api.github.com/users/" + username)
       .then((response) => {
@@ -15,13 +17,17 @@ export default class GithubUser {
       })
       .then((data) => {
         const user = data;
-        console.log(user);
+        if (this.userAlreadyExists(user)) {
+          return;
+        }
+        this.saveUserInStorage(user);
         this.buildUserElements(user);
       });
   }
 
   static buildUserElements(user) {
     const tr = document.createElement("tr");
+    tr.className = user.login;
 
     // User <td>
     const tdUser = document.createElement("td");
@@ -59,6 +65,10 @@ export default class GithubUser {
     const removeButton = document.createElement("button");
     removeButton.type = "button";
     removeButton.className = "remove-user";
+    removeButton.addEventListener("click", (event) => {
+      this.removeUserFromStorage(user);
+      event.target.parentElement.parentElement.remove();
+    });
     tdRemoveUser.title = "Remover usuário";
     tdRemoveUser.appendChild(removeButton);
 
@@ -68,5 +78,26 @@ export default class GithubUser {
     tr.appendChild(tdFollowers);
     tr.appendChild(tdRemoveUser);
     tBody.appendChild(tr);
+  }
+
+  static userAlreadyExists(user) {
+    const userNode = document.querySelector(`.${user.login}`);
+    return tBody.contains(userNode) ? true : false;
+  }
+
+  static saveUserInStorage(user) {
+    const userData = JSON.stringify(user);
+    window.localStorage.setItem(user.id, userData);
+  }
+
+  static retrieveUsersInStorage() {
+    Object.keys(window.localStorage).forEach((key) => {
+      const user = JSON.parse(window.localStorage.getItem(key));
+      this.buildUserElements(user);
+    });
+  }
+
+  static removeUserFromStorage(user) {
+    window.localStorage.removeItem(user.id);
   }
 }
