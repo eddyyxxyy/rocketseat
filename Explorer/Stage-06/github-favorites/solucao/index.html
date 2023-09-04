@@ -3,14 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Github Favorites</title>
+    <script type="module" src="js/main.js" defer></script>
   </head>
   <body>
     <div id="app">
       <header>
-        <h1>Github Favories</h1>
+        <h1>Github Favorites</h1>
         <div class="search">
-          <label for="github-user">Usuário do Github</label>
+          <label class="sr-only" for="github-user">Usuário do Github</label>
           <input
             type="text"
             name=""
@@ -29,38 +37,7 @@
             <th></th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td class="user">
-              <img
-                src="https://github.com/maykbrito.png"
-                alt="Foto de perfil de @maykbrito"
-              />
-              <a href="https://github.com/maykbrito" target="_blank">
-                <p>Mayk Brito</p>
-                <span>maykbrito</span>
-              </a>
-            </td>
-            <td class="repositories">109</td>
-            <td class="followers">9589</td>
-            <td>&times;</td>
-          </tr>
-          <tr>
-            <td class="user">
-              <img
-                src="https://github.com/diego3g.png"
-                alt="Foto de perfil de @maykbrito"
-              />
-              <a href="https://github.com/diego3g" target="_blank">
-                <p>Diego Fernandes</p>
-                <span>diego3g</span>
-              </a>
-            </td>
-            <td class="repositories">48</td>
-            <td class="followers">22503</td>
-            <td>&times;</td>
-          </tr>
-        </tbody>
+        <tbody></tbody>
       </table>
     </div>
   </body>
