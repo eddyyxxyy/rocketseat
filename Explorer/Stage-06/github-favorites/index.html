@@ -15,6 +15,15 @@
   </head>
   <body>
     <div id="app">
+      <dialog>
+        <div class="modal">
+          <div class="close-modal">
+            <button type="button" title="Fechar pop-up"></button>
+          </div>
+          <h2>Usuário não encontrado!</h2>
+          <p>Verifique o <i>username</i> informado e tente novamente.</p>
+        </div>
+      </dialog>
       <header>
         <h1>Github Favorites</h1>
         <div class="search">
@@ -39,47 +48,7 @@
             <th></th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td class="user">
-              <img
-                src="https://github.com/maykbrito.png"
-                alt="Foto de perfil de @maykbrito"
-              />
-              <div class="links-wrapper">
-                <a href="https://github.com/maykbrito" target="_blank">
-                  <p>Mayk Brito</p>
-                  <span>maykbrito</span>
-                </a>
-              </div>
-            </td>
-            <td class="repositories">109</td>
-            <td class="followers">9589</td>
-            <td title="Remover usuário">
-              <button type="button" class="remove-user"></button>
-            </td>
-          </tr>
-          <tr>
-            <td class="user">
-              <img
-                src="https://github.com/diego3g.png"
-                alt="Foto de perfil de @maykbrito"
-                width="460px"
-              />
-              <div class="links-wrapper">
-                <a href="https://github.com/diego3g" target="_blank">
-                  <p>Diego Fernandes</p>
-                  <span>diego3g</span>
-                </a>
-              </div>
-            </td>
-            <td class="repositories">48</td>
-            <td class="followers">22503</td>
-            <td title="Remover usuário">
-              <button type="button" class="remove-user"></button>
-            </td>
-          </tr>
-        </tbody>
+        <tbody></tbody>
       </table>
     </div>
   </body>

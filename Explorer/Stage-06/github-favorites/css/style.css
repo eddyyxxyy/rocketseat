@@ -159,6 +159,11 @@ tr:nth-child(even) {
 .links-wrapper a span {
   display: block;
   transition: all 0.125s ease-out;
+  color: var(--text-purple-lighter);
+}
+
+.links-wrapper a span::before {
+  content: "@";
 }
 
 .links-wrapper a :is(p, span):hover {
@@ -187,6 +192,58 @@ td button {
 }
 
 .remove-user:is(:hover, :focus)::before {
+  transform: rotate(180%);
+  color: var(--text-color);
+  background-color: var(--text-purple-lighter);
+}
+
+dialog {
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  transition: all 0.25s ease-in-out;
+}
+
+dialog[open] {
+  visibility: visible;
+}
+
+.modal {
+  position: relative;
+  display: grid;
+  background-color: var(--darker-grey-bg);
+  row-gap: 1rem;
+  padding: 3.4rem;
+  border-radius: 0.4rem;
+}
+
+.close-modal button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+  background: none;
+  padding: 0.5rem 0.01rem;
+}
+
+.close-modal button::before {
+  content: "x";
+  padding: 0.5rem 0.75rem;
+  transition: all 0.25s ease-out;
+  border-radius: 0.4rem;
+}
+
+.close-modal button:is(:hover, :focus)::before {
   transform: rotate(180%);
   color: var(--text-color);
   background-color: var(--text-purple-lighter);
