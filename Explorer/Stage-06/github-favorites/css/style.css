@@ -1,0 +1,193 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(30%, 1% + 2vw, 62.5%);
+  --text-color: aliceblue;
+  --text-purple-darker: #160625;
+  --text-purple-lighter: #8649c0;
+  --light-grey-bg: #dfdfdf;
+  --darker-grey-bg: #a8a8a8;
+}
+
+#app {
+  display: grid;
+  place-self: center;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 4rem;
+  margin-left: 4rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--text-purple-darker);
+  padding: 2rem;
+  border-radius: 0.8rem 0.8rem 0 0;
+}
+
+h1 {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  color: var(--text-color);
+  text-shadow: 0.195rem 0.195rem 0.26rem rgba(0, 0, 0, 0.15);
+}
+
+.search {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search label {
+  position: absolute;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.search input,
+.search button {
+  border: 0;
+  border-radius: 0.2rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0.1rem 0.1rem 0.2rem;
+}
+
+.search input {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  color: var(--text-purple-darker);
+}
+
+.search :is(input, button):focus {
+  outline: 2px solid var(--darker-grey-bg);
+}
+
+.search button {
+  padding: 0.5rem 0.8rem;
+  background-color: #fff;
+  transition: background 0.175s ease-out;
+}
+
+.search button:is(:hover, :focus) {
+  background-color: var(--text-purple-lighter);
+}
+
+.search button::before {
+  content: "+";
+  display: inline-block;
+  transition: transform 0.125s ease-out;
+}
+
+.search button:is(:hover, :focus)::before {
+  transform: scale(1.2);
+  color: #fff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+}
+
+thead {
+  background-color: #e9e9e9;
+}
+
+th {
+  border: 1px solid #ddd;
+  padding: 12px;
+  color: var(--text-purple-darker);
+  text-align: left;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+td.user {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+td.user img {
+  min-width: 5rem;
+  max-width: 15%;
+  border-radius: 50%;
+}
+
+td.user img:hover {
+  filter: brightness(1.1);
+}
+
+tr .followers + td {
+  padding: 2rem;
+}
+
+tr:nth-child(even) {
+  background-color: #e9e9e9;
+}
+
+.links-wrapper {
+  margin-left: 10px;
+}
+
+.links-wrapper a {
+  text-decoration: none;
+  color: var(--text-purple-darker);
+}
+
+.links-wrapper a:focus {
+  outline: 0;
+}
+
+.links-wrapper a p {
+  margin-bottom: 0.8rem;
+  transition: all 0.125s ease-out;
+}
+
+.links-wrapper a span {
+  display: block;
+  transition: all 0.125s ease-out;
+}
+
+.links-wrapper a :is(p, span):hover {
+  color: var(--text-purple-lighter);
+  text-decoration: underline;
+  transform: translateX(0.2rem);
+}
+
+.links-wrapper a:focus :is(p, span) {
+  color: var(--text-purple-lighter);
+  text-decoration: underline;
+  transform: translateX(0.2rem);
+}
+
+td button {
+  border: 0;
+  background: none;
+  padding: 0.5rem 0.01rem;
+}
+
+.remove-user::before {
+  content: "x";
+  padding: 0.5rem 0.75rem;
+  transition: all 0.25s ease-out;
+  border-radius: 0.4rem;
+}
+
+.remove-user:is(:hover, :focus)::before {
+  transform: rotate(180%);
+  color: var(--text-color);
+  background-color: var(--text-purple-lighter);
+}
