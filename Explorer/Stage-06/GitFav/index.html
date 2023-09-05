@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/default.css" title="Default Style" />
+    <title>GitFav</title>
+    <meta
+      name="description"
+      content="Aplicativo para salvar seus perfis favoritos do Github | Gitfav"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <header class="flex">
+        <figure>
+          <img
+            src="./assets/svg/gitfav-logo.svg"
+            alt="Logo do aplicativo GitFav"
+            decoding="async"
+          />
+          <figcaption class="sr-only">Logo do aplicativo GitFav</figcaption>
+        </figure>
+        <div id="search">
+          <input
+            type="search"
+            name="github-username"
+            id="github-username"
+            autocomplete="username"
+            maxlength="39"
+            placeholder="Digite o Github username que quer favoritar"
+            autofocus
+          />
+          <button type="button" title="Favoritar usuário">
+            <figure>
+              <img
+                src="./assets/svg/empty-star-icon.svg"
+                alt="Ícone de estela sem preenchimento"
+                decoding="async"
+              />
+              <figcaption class="sr-only">
+                Ícone de estela sem preenchimento
+              </figcaption>
+            </figure>
+            <span>Favoritar</span>
+          </button>
+        </div>
+      </header>
+      <main>
+        <table>
+          <thead>
+            <tr>
+              <th id="user">Usuário</th>
+              <th id="repos">Repositórios</th>
+              <th id="followers">Seguidores</th>
+              <th id="action">Ação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="user">
+                <figure>
+                  <img
+                    src="http://github.com/eddyyxxyy.png"
+                    alt="Imagem do perfil de usuário do eddyyxxyy"
+                    decoding="async"
+                    loading="lazy"
+                  />
+                  <figcaption class="sr-only">
+                    Imagem do perfil de usuário do eddyyxxyy
+                  </figcaption>
+                </figure>
+                <a
+                  href="http://github.com/eddyyxxyy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <p>Edson Pimenta</p>
+                  <span>/eddyyxxyy</span>
+                </a>
+              </td>
+              <td>18</td>
+              <td>52</td>
+              <td>
+                <button type="button" title="Remover usuário">Remover</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="user">
+                <figure>
+                  <img
+                    src="http://github.com/davilos.png"
+                    alt="Imagem do perfil de usuário do davilos"
+                    decoding="async"
+                    loading="lazy"
+                  />
+                  <figcaption class="sr-only">
+                    Imagem do perfil de usuário do Dávilos Tavares
+                  </figcaption>
+                </figure>
+                <a
+                  href="http://github.com/davilos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <p>Dávilos Tavares</p>
+                  <span>/davilos</span>
+                </a>
+              </td>
+              <td>18</td>
+              <td>52</td>
+              <td>
+                <button type="button" title="Remover usuário">Remover</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </div>
+  </body>
+</html>

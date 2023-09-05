@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: clamp(40%, 1% + 2vw, 62.5%);
+  --main-bg-color: #000;
+  --button-bg-color: #065e7c;
+  --table-header-bg-color: #092d38;
+  --table-odd-row-bg-color: rgba(6, 22, 27, 0.5);
+  --table-even-row-bg-color: #06181c;
+  --action-text-color: #f75a68;
+  --input-placeholder-text-color: #7c7c8a;
+  --header-text-color: #fff;
+  --text-color: #e1e1e6;
+}
+
+.sr-only {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.flex {
+  display: flex;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  color: var(--text-color);
+  padding: 12rem 16rem;
+}
