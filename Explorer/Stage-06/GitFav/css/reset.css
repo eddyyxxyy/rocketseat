@@ -8,8 +8,8 @@
   font-size: clamp(40%, 1% + 2vw, 62.5%);
   --main-bg-color: #000;
   --button-bg-color: #065e7c;
+  --table-border-color: #4a808c;
   --table-header-bg-color: #092d38;
-  --table-odd-row-bg-color: rgba(6, 22, 27, 0.5);
   --table-even-row-bg-color: #06181c;
   --action-text-color: #f75a68;
   --input-placeholder-text-color: #7c7c8a;
@@ -33,10 +33,18 @@
   display: flex;
 }
 
+.grid {
+  display: grid;
+}
+
 body {
   background-color: var(--main-bg-color);
-  font-family: "Roboto", sans-serif;
-  font-size: 1.6rem;
   color: var(--text-color);
   padding: 12rem 16rem;
+  height: 100vh;
+}
+
+body * {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
 }

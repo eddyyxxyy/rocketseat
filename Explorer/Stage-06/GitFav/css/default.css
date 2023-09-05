@@ -1,0 +1,159 @@
+#app {
+}
+
+header {
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 8rem;
+}
+
+.logo {
+  max-height: 3.2rem;
+}
+
+#search {
+  gap: 0.8rem;
+}
+
+input,
+button {
+  min-height: 4.8rem;
+  flex-wrap: nowrap;
+  border: none;
+  border-radius: 0.5rem;
+  background: none;
+}
+
+input {
+  padding: 1.6rem;
+  min-width: 40rem;
+  background-color: var(--table-even-row-bg-color);
+  color: var(--text-color);
+}
+
+input::placeholder {
+  color: var(--input-placeholder-text-color);
+}
+
+header button {
+  align-items: center;
+  gap: 0.8rem;
+  background-color: var(--button-bg-color);
+  font-weight: 700;
+  padding: 1.2rem 3rem;
+  color: var(--header-text-color);
+  cursor: pointer;
+}
+
+button span {
+  font-size: 1.4rem;
+}
+
+main {
+  font-size: 2rem;
+  width: 100%;
+}
+
+#table-wrapper {
+  border: 1px solid var(--table-border-color);
+  border-radius: 1.2rem;
+  width: 100%;
+  max-height: 400px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+}
+
+#table-wrapper::-webkit-scrollbar {
+  width: 10px;
+}
+
+#table-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#table-wrapper::-webkit-scrollbar-thumb {
+  background: var(--table-border-color);
+  border-radius: 0 8px 8px 0;
+}
+
+#table-wrapper::-webkit-scrollbar-corner {
+}
+
+table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  outline: 1px solid var(--table-border-color);
+  background-color: var(--table-header-bg-color);
+}
+
+table tr {
+  border: 1px solid var(--table-border-color);
+}
+
+table tr:nth-child(even) {
+  background-color: var(--table-even-row-bg-color);
+}
+
+table th {
+  padding: 1.6rem 4rem;
+}
+
+table td {
+  padding: 2.4rem 2.4rem 2.4rem 4rem;
+}
+
+td.user {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+td.user figure {
+  display: inline-block;
+  min-height: 5rem;
+  min-width: 5rem;
+  max-height: 7.2rem;
+  max-width: 7.2rem;
+}
+
+figure img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+td.user a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+td.user a p {
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+td button {
+  color: var(--action-text-color);
+  cursor: pointer;
+}
+
+.populated {
+  height: 50%;
+}
+
+.populated::after {
+  content: "";
+}
+
+.populated > * {
+  display: none;
+}
