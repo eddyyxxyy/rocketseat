@@ -48,6 +48,14 @@ class NotesController {
       links,
     });
   }
+
+  async delete(req, resp) {
+    const { id } = req.params;
+
+    await knex("notes").where({ id: id }).delete();
+
+    return resp.json();
+  }
 }
 
 module.exports = NotesController;
