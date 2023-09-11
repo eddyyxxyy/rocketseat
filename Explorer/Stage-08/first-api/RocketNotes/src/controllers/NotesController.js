@@ -56,6 +56,13 @@ class NotesController {
 
     return resp.json();
   }
+
+  async index(req, resp) {
+    const { user_id } = req.query;
+    const notes = await knex("notes").where({ user_id }).orderBy("title");
+
+    return resp.json(notes);
+  }
 }
 
 module.exports = NotesController;
