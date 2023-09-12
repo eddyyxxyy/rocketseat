@@ -1,6 +1,6 @@
 const knex = require("../database/knex");
 const AppError = require("../utils/AppError");
-const userExists = require("../utils/userExists");
+const userWithProvidedEmailExists = require("../utils/userWithProvidedEmailExists");
 const checkUserRequestData = require("../utils/checkUserRequestData");
 const { hash, compare } = require("bcrypt");
 
@@ -29,7 +29,7 @@ class UsersController {
       throw new AppError(errors);
     }
 
-    if (await userExists(knex, email)) {
+    if (await userWithProvidedEmailExists(knex, email)) {
       throw new AppError("E-mail already in use, try another.");
     }
 
@@ -38,6 +38,38 @@ class UsersController {
     await knex("users").insert({ name, email, password: encryptedPassword });
 
     res.status(201).json({ message: `User '${name}' created with success` });
+  }
+
+  async update(req, res) {
+    const { id } = req.params;
+    const { name, email, password, oldPassword } = req.body;
+    const userOldPassword = await knex("users")
+      .select("password")
+      .where({ id })
+      .first();
+
+    let errors = checkUserRequestData({ name, email, password });
+
+    if (Object.keys(errors).length > 0) {
+      throw new AppError(errors);
+    }
+
+    if (await userWithProvidedEmailExists(knex, email, id)) {
+      throw new AppError("E-mail already in use, try another.");
+    }
+
+    const passwordsMatch = await compare(oldPassword, userOldPassword.password);
+
+    if (!passwordsMatch) {
+      errors = {
+        ...errors,
+        oldPassword: `Old password does not match.`,
+      };
+    }
+
+    res
+      .status(201)
+      .json({ message: `User '${name}' info updated with success` });
   }
 }
 

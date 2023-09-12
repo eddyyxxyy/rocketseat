@@ -1,0 +1,22 @@
+/**
+ * Checks if a user exists in the database based on their email.
+ *
+ * @param {object} conn - The Knex.js connection object
+ * @param {string} userEmail - The user's e-mail to check
+ * @param {string?} id - Optional user's id
+ * @returns {promise | boolean} - Returns a promise that resolves to the user object if found, otherwise resolves to undefined.
+ */
+async function userWithProvidedEmailExists(conn, userEmail, id = null) {
+  if (!userEmail) {
+    return userEmail;
+  }
+
+  const user = await conn("users").where({ email: userEmail }).first();
+
+  if (id) {
+    return id === user.id ? true : false;
+  }
+  return conn("users").where({ email: userEmail }).first();
+}
+
+module.exports = userWithProvidedEmailExists;
