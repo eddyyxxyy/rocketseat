@@ -23,14 +23,14 @@ class UsersController {
   async create(req, res) {
     const { name, email, password } = req.body;
 
-    if (await userExists(knex, email)) {
-      throw new AppError("E-mail already in use, try another.");
-    }
-
     const errors = checkUserRequestData({ name, email, password });
 
     if (Object.keys(errors).length > 0) {
       throw new AppError(errors);
+    }
+
+    if (await userExists(knex, email)) {
+      throw new AppError("E-mail already in use, try another.");
     }
 
     const encryptedPassword = await hash(password, 8);

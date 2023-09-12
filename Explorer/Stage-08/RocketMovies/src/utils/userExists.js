@@ -6,6 +6,9 @@
  * @returns {promise} - Returns a promise that resolves to the user object if found, otherwise resolves to undefined.
  */
 function userExists(conn, userEmail) {
+  if (!userEmail) {
+    return userEmail;
+  }
   return conn("users").where({ email: userEmail }).first();
 }
 
