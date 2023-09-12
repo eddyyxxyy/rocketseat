@@ -4,7 +4,7 @@
  */
 class AppError {
   /**
-   * @property {string} message - The error message
+   * @property {string | object} message - The error message
    */
   message;
   /**
@@ -15,7 +15,7 @@ class AppError {
   /**
    * Create an AppError
    * @constructor
-   * @param {string} message - The error message
+   * @param {string | object} message - The error message
    * @param {number} [statusCode=400] - The HTTP status code
    */
   constructor(message, statusCode = 400) {

@@ -43,19 +43,18 @@ class UsersController {
   async update(req, res) {
     const { id } = req.params;
     const { name, email, password, oldPassword } = req.body;
-    const userOldPassword = await knex("users")
-      .select("password")
-      .where({ id })
-      .first();
+    const userOldPassword = await knex("users").where({ id }).first();
 
-    let errors = checkUserRequestData({ name, email, password });
+    let errors = checkUserRequestData({ name, email, password, oldPassword });
 
-    if (Object.keys(errors).length > 0) {
-      throw new AppError(errors);
-    }
-
-    if (await userWithProvidedEmailExists(knex, email, id)) {
-      throw new AppError("E-mail already in use, try another.");
+    if (email) {
+      const userWithEmail = await userWithProvidedEmailExists(knex, email);
+      if (id != userWithEmail.id) {
+        errors = {
+          ...errors,
+          email: "E-mail already in use, try another.",
+        };
+      }
     }
 
     const passwordsMatch = await compare(oldPassword, userOldPassword.password);
@@ -66,6 +65,14 @@ class UsersController {
         oldPassword: `Old password does not match.`,
       };
     }
+
+    if (Object.keys(errors).length > 0) {
+      throw new AppError(errors);
+    }
+
+    const encryptedPassword = await hash(password, 8);
+
+    await knex("users").update({ name, email, password: encryptedPassword });
 
     res
       .status(201)
