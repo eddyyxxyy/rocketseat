@@ -1,6 +1,7 @@
 require("express-async-errors");
 const express = require("express");
 const router = require("./routes");
+const AppError = require("./utils/AppError");
 
 const app = express();
 const PORT = 8080;
