@@ -7,6 +7,35 @@ export const Container = styled.div`
 
   width: 100%;
   height: 100vh;
+
+  > main {
+    grid-area: content;
+    overflow-y: scroll;
+    padding: 6.4rem 0;
+  }
+`;
+
+export const Content = styled.div`
+  max-width: 55rem;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  > button:first-of-type {
+    text-align: right;
+  }
+
+  > h1 {
+    font-size: 3.6rem;
+    font-weight: 500;
+    padding-top: 6.4rem;
+  }
+
+  > p {
+    text-align: justify;
+    margin-top: 1.6rem;
+  }
 `;
 
 export const Links = styled.ul`
