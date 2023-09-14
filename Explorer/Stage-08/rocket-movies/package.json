@@ -1,0 +1,25 @@
+{
+  "name": "rocket-movies",
+  "version": "1.0.0",
+  "description": "API that allows users to register movies, fill in relevant information such as name, description, and rating, and create tags related to them.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/index.js",
+    "migrate": "knex migrate:latest",
+    "rollback": "knex migrate:rollback",
+    "rollbackAll": "knex migrate:rollback --all"
+  },
+  "keywords": ["node", "express", "knex", "sqlite3"],
+  "author": "Edson Pimenta <dev.eddyyxxyy@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.18.2",
+    "knex": "^2.5.1",
+    "sqlite3": "^5.1.6"
+  }
+}
