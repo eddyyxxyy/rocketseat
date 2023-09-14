@@ -2,7 +2,6 @@
   "name": "rocket-movies",
   "version": "1.0.0",
   "description": "API that allows users to register movies, fill in relevant information such as name, description, and rating, and create tags related to them.",
-  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon ./src/index.js",
