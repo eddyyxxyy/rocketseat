@@ -31,7 +31,24 @@ class UsersController {
         .status(200)
         .json({ message: `User '${name}' successfully created.` });
     } catch (err) {
-      console.log(err);
+      return next(err);
+    }
+  }
+
+  async show(req, res, next) {
+    const { id } = req.params;
+
+    try {
+      const user = await conn('users').where({ id }).first();
+
+      if (!user) {
+        throw new AppError('User not found.', 400);
+      }
+
+      const { name, email, avatar } = user;
+
+      return res.status(200).json({ name, email, avatar });
+    } catch (err) {
       return next(err);
     }
   }
