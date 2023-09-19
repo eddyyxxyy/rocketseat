@@ -13,7 +13,7 @@ export function SignIn() {
           <p>Application to track everything you watch.</p>
           <h2>Enter your credentials</h2>
         </header>
-        <Input icon={FiMail} placeholder="E-mail" />
+        <Input icon={FiMail} placeholder="E-mail" autoFocus />
         <Input icon={FiLock} placeholder="Password" />
         <Button text="Sign in" type="button" />
         <TextButton text="Sign up" to="/register" isActive="true" />

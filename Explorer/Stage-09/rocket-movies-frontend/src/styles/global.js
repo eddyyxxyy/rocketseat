@@ -34,7 +34,9 @@ export default createGlobalStyle`
   }
 
   a:hover,
-  button:hover {
+  a:focus,
+  button:hover,
+  button:focus {
     filter: brightness(0.8);
   }
 `;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import backgroundImg from '../../assets/movie-theater.jpg';
 
-export const Container = styled.div`
+export const Container = styled.main`
   height: 100vh;
   width: 100%;
 
