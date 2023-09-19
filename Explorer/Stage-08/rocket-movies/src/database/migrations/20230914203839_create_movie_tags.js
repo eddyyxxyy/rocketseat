@@ -1,6 +1,7 @@
 exports.up = (knex) => {
   return knex.schema.createTable('movie_tags', (table) => {
     table.increments('id');
+    table.string('name').notNullable();
     table
       .integer('notes_id')
       .unsigned()
