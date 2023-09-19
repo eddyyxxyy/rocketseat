@@ -121,6 +121,21 @@ class UsersController {
 
     return res.status(200).json({ message: `User updated successfully.` });
   }
+
+  async delete(req, res, next) {
+    const { id } = req.params;
+
+    const user = await conn('users').select('name', 'id').where({ id }).first();
+    if (!user) {
+      return next(new AppError('User not found.', 400));
+    }
+
+    await conn('users').where({ id: user.id }).delete();
+
+    return res.json({
+      message: `Users '${user.name}' with id '${user.id}' deleted successfully.`,
+    });
+  }
 }
 
 module.exports = UsersController;
