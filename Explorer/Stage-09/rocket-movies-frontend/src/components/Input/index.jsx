@@ -1,9 +1,9 @@
 import { Container } from './style';
 
-export function Input({ icon, ...rest }) {
+export function Input({ icon: Icon, ...rest }) {
   return (
     <Container>
-      {icon && <icon />}
+      {Icon && <Icon size={20} />}
       <input {...rest} />
     </Container>
   );

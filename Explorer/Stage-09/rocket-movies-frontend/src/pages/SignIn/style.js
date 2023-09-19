@@ -35,6 +35,14 @@ export const Form = styled.form`
     color: ${({ theme }) => theme.COLORS.WHITE_200};
     margin: 5rem 0;
   }
+
+  button {
+    margin-top: 2.4rem;
+  }
+
+  a {
+    margin-top: 4.8rem;
+  }
 `;
 
 export const BackgroundImg = styled.div`

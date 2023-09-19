@@ -18,6 +18,11 @@ export const Container = styled.div`
 
   > input {
     background: none;
+    color: ${({ theme }) => theme.COLORS.WHITE_100};
     border: none;
+  }
+
+  > svg {
+    color: ${({ theme }) => theme.COLORS.GRAY_300};
   }
 `;
