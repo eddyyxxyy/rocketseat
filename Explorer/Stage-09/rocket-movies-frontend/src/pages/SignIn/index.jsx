@@ -1,3 +1,5 @@
+import { Container } from './style';
+
 export function SignIn() {
-  return <h1>Hello World</h1>;
+  return <Container></Container>;
 }
