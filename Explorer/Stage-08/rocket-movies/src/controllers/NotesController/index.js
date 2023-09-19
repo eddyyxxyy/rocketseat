@@ -150,6 +150,20 @@ class NotesController {
       return next(err);
     }
   }
+
+  async delete(req, res, next) {
+    const { id } = req.params;
+
+    const note = await conn('movie_notes').where({ id }).first();
+
+    if (!note) {
+      return next(new AppError('Note not found', 400));
+    }
+
+    await conn('movie_notes').where({ id }).delete();
+
+    return res.json({ message: 'Note deleted successfully.' });
+  }
 }
 
 module.exports = NotesController;
