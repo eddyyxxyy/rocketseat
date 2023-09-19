@@ -114,6 +114,7 @@ class UsersController {
         name: user.name,
         email: user.email,
         password: user.password,
+        modified_at: conn.fn.now(),
       });
     } catch (err) {
       return next(err);
