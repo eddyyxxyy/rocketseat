@@ -3,7 +3,7 @@ exports.up = (knex) => {
     table.increments('id');
     table.string('name').notNullable();
     table
-      .integer('notes_id')
+      .integer('note_id')
       .unsigned()
       .references('movie_notes.id')
       .onDelete('CASCADE')
