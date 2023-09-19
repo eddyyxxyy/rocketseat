@@ -17,6 +17,7 @@ export const Container = styled.div`
   margin-bottom: 0.8rem;
 
   > input {
+    width: 100%;
     background: none;
     color: ${({ theme }) => theme.COLORS.WHITE_100};
     border: none;
