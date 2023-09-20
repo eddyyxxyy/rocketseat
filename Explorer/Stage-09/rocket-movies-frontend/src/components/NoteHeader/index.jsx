@@ -9,7 +9,7 @@ export function NoteHeader({ heading, rating, inDetailView = false }) {
 
   return (
     <Container $indetail={inDetailView}>
-      <h1>{heading}</h1>
+      <h3>{heading}</h3>
       <Rating>{...stars}</Rating>
     </Container>
   );

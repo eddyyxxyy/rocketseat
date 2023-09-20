@@ -9,6 +9,10 @@ export const Container = styled.div`
       : 'flex-direction: row; \
           gap: 2rem; \
           align-items: center;'};
+
+  > h3 {
+    font-size: ${({ $indetail }) => (!$indetail ? '2.4rem' : '3.6rem')};
+  }
 `;
 
 export const Rating = styled.div`
