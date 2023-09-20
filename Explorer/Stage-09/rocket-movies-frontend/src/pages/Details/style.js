@@ -27,4 +27,13 @@ export const Container = styled.article`
   }
 `;
 
-export const NoteAuthor = styled.div``;
+export const NoteContent = styled.div`
+  color: ${({ theme }) => theme.COLORS.WHITE_200};
+
+  margin-top: 2.4rem;
+
+  > p {
+    text-align: justify;
+    margin-bottom: 2rem;
+  }
+`;
