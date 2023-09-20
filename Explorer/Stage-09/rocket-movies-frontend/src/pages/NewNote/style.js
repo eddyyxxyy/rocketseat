@@ -11,5 +11,25 @@ export const Container = styled.div`
     grid-area: content;
 
     padding: 4.8rem 12.4rem;
+
+    a {
+      justify-content: left;
+      margin-bottom: 2.4rem;
+
+      color: ${({ theme }) => theme.COLORS.PINK_200};
+    }
+  }
+
+  .info {
+    display: flex;
+    gap: 4rem;
+
+    margin: 4rem 0;
+  }
+
+  .new-tags {
+    margin-top: 4rem;
   }
 `;
+
+export const Form = styled.form``;
