@@ -4,38 +4,63 @@ import { Header } from '../../components/Header/index.jsx';
 import { Section } from '../../components/Section/index.jsx';
 import { Tag } from '../../components/Tag/index.jsx';
 import { TextButton } from '../../components/TextButton/index.jsx';
+import { useParams, useNavigate } from 'react-router-dom';
+import { api } from '../../services/api.js';
+import { useEffect, useState } from 'react';
 
 export function Details() {
+  const params = useParams();
+  const [note, setNote] = useState({});
+  const navigate = useNavigate();
+
+  function handleGoBack() {
+    navigate(-1);
+  }
+
+  async function handleRemove() {
+    const confirm = window.confirm('Deseja realmente deletar a nota?');
+
+    if (confirm) {
+      await api.delete(`/notes/${note.id}`);
+      navigate(-1);
+    }
+  }
+
+  useEffect(() => {
+    async function fetchNote() {
+      const response = await api.get(`/notes/${params.id}`);
+      setNote(response.data);
+    }
+
+    fetchNote();
+  }, []);
+
   return (
     <>
       <Container>
         <Header />
         <main>
           <Content>
-            <TextButton title="Excluir nota" />
-            <h1>Introdução ao React</h1>
-            <p>
-              Tempor ut consectetur Lorem dolore eu irure. Officia cillum nulla
-              irure anim voluptate incididunt pariatur. Laborum anim veniam
-              Lorem sit consequat magna aute irure cupidatat velit labore eu
-              tempor voluptate. Sit ex labore incididunt voluptate qui sint id
-              fugiat officia laborum.
-            </p>
+            <TextButton title="Excluir nota" onClick={handleRemove} />
+            <h1>{note.title}</h1>
+            <p>{note.description}</p>
             <Section title="Links úteis">
               <Links>
-                <li>
-                  <a href="#">https://www.rocketseat.com.br/</a>
-                </li>
-                <li>
-                  <a href="#">https://www.rocketseat.com.br/</a>
-                </li>
+                {note.links &&
+                  note.links.map((link) => (
+                    <li key={link.id}>
+                      <a href={link.url} target="_blank" rel="noreferrer">
+                        {link.url}
+                      </a>
+                    </li>
+                  ))}
               </Links>
             </Section>
             <Section title="Marcadores">
-              <Tag title="express" />
-              <Tag title="node" />
+              {note.tags &&
+                note.tags.map((tag) => <Tag key={tag.id} title={tag.name} />)}
             </Section>
-            <Button text="Voltar" />
+            <Button text="Voltar" onClick={handleGoBack} />
           </Content>
         </main>
       </Container>
