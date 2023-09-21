@@ -4,15 +4,19 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
 
-  background-color: ${({ theme, isnew }) =>
-    isnew ? 'transparent' : theme.COLORS.BACKGROUND_900};
+  background-color: ${(props) =>
+    props.$isnew === 'true'
+      ? 'transparent'
+      : props.theme.COLORS.BACKGROUND_900};
 
-  color: ${({ theme }) => theme.COLORS.GRAY_300};
+  color: ${(props) => props.theme.COLORS.GRAY_300};
 
   padding-right: 1.6rem;
 
-  border: ${({ theme, isnew }) =>
-    isnew ? `.1rem dashed ${theme.COLORS.GRAY_300}` : 'none'};
+  border: ${(props) =>
+    props.$isnew === 'true'
+      ? `.1rem dashed ${props.theme.COLORS.GRAY_300}`
+      : 'none'};
   border-radius: 1rem;
 
   margin-bottom: 0.8rem;
@@ -23,11 +27,11 @@ export const Container = styled.div`
   }
 
   .button-delete {
-    color: ${({ theme }) => theme.COLORS.RED};
+    color: ${(props) => props.theme.COLORS.RED};
   }
 
   .button-add {
-    color: ${({ theme }) => theme.COLORS.ORANGE};
+    color: ${(props) => props.theme.COLORS.ORANGE};
   }
 
   > input {
@@ -36,14 +40,15 @@ export const Container = styled.div`
 
     background: transparent;
 
-    color: ${({ theme }) => theme.COLORS.WHITE};
+    color: ${(props) => props.theme.COLORS.WHITE};
 
     padding: 1.2rem;
 
     border: none;
+    readonly: true;
 
     &::placeholder {
-      color: ${({ theme }) => theme.COLORS.GRAY_300};
+      color: ${(props) => props.theme.COLORS.GRAY_300};
     }
   }
 `;

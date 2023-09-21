@@ -3,8 +3,12 @@ import { FiPlus, FiX } from 'react-icons/fi';
 
 export function NoteItem({ isNew, value, onClick, ...rest }) {
   return (
-    <Container isnew={isNew}>
-      <input type="text" value={value || ''} readOnly={!isNew} {...rest} />
+    <Container $isnew={isNew ? 'true' : 'false'}>
+      {isNew ? (
+        <input type="text" value={value || ''} {...rest} />
+      ) : (
+        <input type="text" value={value || ''} readOnly {...rest} />
+      )}
       <button
         type="button"
         onClick={onClick}
