@@ -15,6 +15,16 @@ export class Database {
     fs.writeFile(databaseFilePath, JSON.stringify(this.#database));
   }
 
+  delete(table, id) {
+    const oldTable = this.#database[table];
+    const newTable = oldTable.filter((row) => row.id !== id);
+
+    if (newTable.length !== oldTable.length) {
+      this.#database[table] = newTable;
+      this.#persist();
+    }
+  }
+
   insert(table, data) {
     if (Array.isArray(this.#database[table])) {
       this.#database = {
@@ -33,8 +43,35 @@ export class Database {
     return data;
   }
 
-  select(table) {
-    const data = this.#database[table] ?? [];
+  select(table, search) {
+    let data = this.#database[table] ?? [];
+
+    if (search) {
+      data = data.filter((user) => {
+        return Object.entries(search).some(([key, value]) => {
+          return user[key].toLowerCase().includes(value.toLowerCase());
+        });
+      });
+    }
+
     return data;
+  }
+
+  update(table, data, id) {
+    const oldTable = this.#database[table];
+    const newTable = oldTable.map((row) => {
+      if (row.id === id) {
+        return {
+          id: id,
+          name: data[0],
+          email: data[1],
+        };
+      } else {
+        return row;
+      }
+    });
+
+    this.#database = { ...this.#database, [table]: newTable };
+    this.#persist();
   }
 }
