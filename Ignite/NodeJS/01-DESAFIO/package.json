@@ -1,0 +1,29 @@
+{
+  "name": "tasks-api",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "API CRUD for tasks",
+  "main": ".src/server.js",
+  "scripts": {
+    "dev": "node --watch --trace-warnings ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eddyyxxyy/rocketseat.git"
+  },
+  "keywords": [
+    "api",
+    "node",
+    "csv",
+    "tasks"
+  ],
+  "author": "Edson Pimenta <dev.eddyyxxyy@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eddyyxxyy/rocketseat/issues"
+  },
+  "homepage": "https://github.com/eddyyxxyy/rocketseat#readme",
+  "dependencies": {
+    "csv-parse": "^5.5.0"
+  }
+}
