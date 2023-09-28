@@ -44,6 +44,36 @@ export class Database {
     return newTaskData;
   }
 
+  markAsComplete(table, id) {
+    const oldDataIndex = this.#database[table].findIndex(
+      (task) => task.id === id
+    );
+
+    if (oldDataIndex === -1) {
+      return JSON.stringify({
+        error: 'Task not found.',
+        message: 'Try another ID.',
+      });
+    }
+
+    const newDataArray = [...this.#database[table]];
+
+    const updatedTask = {
+      ...newDataArray[oldDataIndex],
+      completed_at: timestamp(),
+      updated_at: timestamp(),
+    };
+
+    newDataArray[oldDataIndex] = updatedTask;
+
+    this.#database = {
+      ...this.#database,
+      [table]: newDataArray,
+    };
+
+    this.#persist();
+  }
+
   select(table, search) {
     if (!search || search.length === 0) {
       return this.#database[table] ?? [];
