@@ -47,6 +47,29 @@ export const routes = [
     },
   },
   {
+    method: 'POST',
+    path: buildRoutePath('/tasks/import'),
+    handler(req, res) {
+      try {
+        const { csvRows } = req.body;
+
+        csvRows.forEach((task) => {
+          const { title, description } = task;
+          database.create('tasks', { title, description });
+        });
+
+        return res.writeHead(204).end();
+      } catch {
+        return res.writeHead(400).end(
+          JSON.stringify({
+            error: 'No data.',
+            message: 'Your .csv file is probably not valid or was not sent.',
+          })
+        );
+      }
+    },
+  },
+  {
     method: 'PATCH',
     path: buildRoutePath('/tasks/:id/complete'),
     handler(req, res) {

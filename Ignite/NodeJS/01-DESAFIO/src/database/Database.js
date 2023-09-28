@@ -45,6 +45,13 @@ export class Database {
   }
 
   delete(table, id) {
+    if (!this.#database[table]) {
+      return JSON.stringify({
+        error: 'Task not found.',
+        message: 'There is no tasks registered.',
+      });
+    }
+
     const dataIndex = this.#database[table].findIndex((task) => task.id === id);
 
     if (dataIndex === -1) {
@@ -67,6 +74,13 @@ export class Database {
   }
 
   markAsComplete(table, id) {
+    if (!this.#database[table]) {
+      return JSON.stringify({
+        error: 'Task not found.',
+        message: 'There is no tasks registered.',
+      });
+    }
+
     const oldDataIndex = this.#database[table].findIndex(
       (task) => task.id === id
     );
@@ -99,6 +113,13 @@ export class Database {
   select(table, search) {
     if (!search || search.length === 0) {
       return this.#database[table] ?? [];
+    }
+
+    if (!this.#database[table]) {
+      return {
+        error: 'Task not found.',
+        message: 'There is no tasks registered.',
+      };
     }
 
     const filteredTasks = this.#database[table].filter((tasks) => {
