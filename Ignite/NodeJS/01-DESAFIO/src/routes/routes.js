@@ -48,11 +48,26 @@ export const routes = [
   },
   {
     method: 'PATCH',
-    path: buildRoutePath('/tasks/:id'),
+    path: buildRoutePath('/tasks/:id/complete'),
     handler(req, res) {
       const { id } = req.params;
 
       const taskDoNotExists = database.markAsComplete('tasks', id);
+
+      if (taskDoNotExists) {
+        return res.writeHead(404).end(taskDoNotExists);
+      }
+
+      return res.writeHead(204).end();
+    },
+  },
+  {
+    method: 'DELETE',
+    path: buildRoutePath('/tasks/:id'),
+    handler(req, res) {
+      const { id } = req.params;
+
+      const taskDoNotExists = database.delete('tasks', id);
 
       if (taskDoNotExists) {
         return res.writeHead(404).end(taskDoNotExists);

@@ -44,6 +44,28 @@ export class Database {
     return newTaskData;
   }
 
+  delete(table, id) {
+    const dataIndex = this.#database[table].findIndex((task) => task.id === id);
+
+    if (dataIndex === -1) {
+      return JSON.stringify({
+        error: 'Task not found.',
+        message: 'Try another ID.',
+      });
+    }
+
+    const newDataArray = [
+      ...this.#database[table].filter((task) => task.id !== id),
+    ];
+
+    this.#database = {
+      ...this.#database,
+      [table]: newDataArray,
+    };
+
+    this.#persist();
+  }
+
   markAsComplete(table, id) {
     const oldDataIndex = this.#database[table].findIndex(
       (task) => task.id === id
