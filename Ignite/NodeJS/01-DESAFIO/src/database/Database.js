@@ -130,4 +130,42 @@ export class Database {
 
     return filteredTasks;
   }
+
+  update(table, id, data) {
+    if (!this.#database[table]) {
+      return JSON.stringify({
+        error: 'Task not found.',
+        message: 'There is no tasks registered.',
+      });
+    }
+
+    const oldDataIndex = this.#database[table].findIndex(
+      (task) => task.id === id
+    );
+
+    if (oldDataIndex === -1) {
+      return JSON.stringify({
+        error: 'Task not found.',
+        message: 'Try another ID.',
+      });
+    }
+
+    const newDataArray = [...this.#database[table]];
+
+    const updatedTask = {
+      ...newDataArray[oldDataIndex],
+      title: data.title ?? newDataArray[oldDataIndex].title,
+      description: data.description ?? newDataArray[oldDataIndex].description,
+      updated_at: timestamp(),
+    };
+
+    newDataArray[oldDataIndex] = updatedTask;
+
+    this.#database = {
+      ...this.#database,
+      [table]: newDataArray,
+    };
+
+    this.#persist();
+  }
 }

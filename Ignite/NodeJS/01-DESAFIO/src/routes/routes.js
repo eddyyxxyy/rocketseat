@@ -70,6 +70,31 @@ export const routes = [
     },
   },
   {
+    method: 'PUT',
+    path: buildRoutePath('/tasks/:id'),
+    handler(req, res) {
+      let title, description;
+
+      try {
+        ({ title, description } = req.body);
+      } catch {}
+
+      const { id } = req.params;
+
+      const taskDoNotExists = database.update('tasks', id, {
+        title: title ?? null,
+        description: description ?? null,
+      });
+
+      if (taskDoNotExists) {
+        return res.writeHead(404).end(taskDoNotExists);
+      }
+
+      return res.writeHead(204).end();
+    },
+  },
+
+  {
     method: 'PATCH',
     path: buildRoutePath('/tasks/:id/complete'),
     handler(req, res) {
