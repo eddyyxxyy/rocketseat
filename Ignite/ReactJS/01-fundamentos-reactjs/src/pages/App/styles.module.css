@@ -2,8 +2,38 @@
   height: 100vh;
 
   display: grid;
-  grid-template-rows: 10rem auto;
+  grid-template-rows: auto 1fr;
   grid-template-areas: 'header' 'content';
 
   background-color: var(--gray-700);
+}
+
+.content {
+  grid-area: content;
+
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+
+  padding: 2.4rem 4rem;
+  overflow-y: auto;
+}
+
+.posts {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .content {
+    padding: 3.2rem 16rem 0;
+    grid-template-columns: minmax(0, 27rem) 1fr;
+    grid-template-rows: none;
+    gap: 3.2rem;
+  }
 }
