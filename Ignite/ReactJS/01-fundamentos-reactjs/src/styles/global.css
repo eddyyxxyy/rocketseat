@@ -1,0 +1,34 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: clamp(40%, 1% + 2vw, 61.5%);
+  --green: #00875f;
+  --green-light: #00b37e;
+  --red-danger: #f75a68;
+  --gray-100: #e1e1e6;
+  --gray-200: #c4c4cc;
+  --gray-300: #8d8d99;
+  --gray-400: #7c7c8a;
+  --gray-500: #323238;
+  --gray-600: #202024;
+  --gray-700: #121214;
+  --white: #ffffff;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
