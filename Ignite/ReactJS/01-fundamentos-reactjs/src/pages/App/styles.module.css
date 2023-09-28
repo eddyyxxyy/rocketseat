@@ -1,1 +1,9 @@
+.app {
+  height: 100vh;
 
+  display: grid;
+  grid-template-rows: 10rem auto;
+  grid-template-areas: 'header' 'content';
+
+  background-color: var(--gray-700);
+}

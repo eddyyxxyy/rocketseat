@@ -1,7 +1,10 @@
+import { Header } from '../../components/Header';
+import styles from './styles.module.css';
+
 export function App() {
   return (
-    <>
-      <h1>Hello World!</h1>
-    </>
+    <div className={styles.app}>
+      <Header />
+    </div>
   );
 }
