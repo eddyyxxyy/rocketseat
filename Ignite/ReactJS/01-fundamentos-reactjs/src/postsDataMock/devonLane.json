@@ -1,0 +1,38 @@
+{
+  "content": [
+    "Fala pessoal 👋",
+    "Finalmente finalizei meu novo site/portfólio. Foi um baita desafio criar todo o design e codar na unha, mas consegui 💪🏻",
+    "Acesse e deixe seu feedback"
+  ],
+  "links": [
+    "👉 devonlane.design"
+  ],
+  "hashtags": [
+    "#uiux",
+    "#userexperience"
+  ],
+  "createdAt": "11:59",
+  "comments": [
+    {
+      "user": "Leslie Alexander",
+      "avatarUrl": "src/assets/leslie-alexander.png",
+      "timestamp": "08:32",
+      "comment": "Muito bom Devon, parabéns!! 👏👏",
+      "applaudStart": 3
+    },
+    {
+      "user": "Jenny Wilson",
+      "avatarUrl": "src/assets/jenny-wilson.jpeg",
+      "timestamp": "10:06",
+      "comment": "Adorei seu novo portifa Devon!",
+      "applaudStart": 32
+    },
+    {
+      "user": "Bessie Cooper",
+      "avatarUrl": "src/assets/bessie-cooper.png",
+      "timestamp": "08:00",
+      "comment": "💜💜",
+      "applaudStart": 3
+    }
+  ]
+}

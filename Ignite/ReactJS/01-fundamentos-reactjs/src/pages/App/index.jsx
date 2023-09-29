@@ -4,8 +4,10 @@ import { Post } from '../../components/Post';
 
 import leslieAlexanderProfilePicture from '../../assets/leslie-alexander.png';
 import janeCooperProfilePicture from '../../assets/jane-cooper.jpg';
+import devonLaneProfilePicture from '../../assets/devon-lane.jpeg';
 
 import janeCooperPostContent from '../../postsDataMock/janeCooper.json';
+import devonLanePostContent from '../../postsDataMock/devonLane.json';
 
 import styles from './styles.module.css';
 
@@ -27,6 +29,14 @@ export function App() {
               userWork: 'Dev Front End',
             }}
             content={janeCooperPostContent}
+          />
+          <Post
+            profile={{
+              avatarUrl: devonLaneProfilePicture,
+              userName: 'Devon Lane',
+              userWork: 'Dev Front End',
+            }}
+            content={devonLanePostContent}
           />
         </main>
       </div>

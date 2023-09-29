@@ -1,0 +1,43 @@
+.thumbs_up_button {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  background-color: transparent;
+
+  font-size: 16px;
+  color: var(--gray-300);
+
+  border: none;
+
+  cursor: pointer;
+}
+
+.thumbs_up_button:hover {
+  color: var(--white);
+  filter: brightness(1.2);
+}
+
+.icon {
+  fill: none;
+  stroke: var(--gray-300);
+}
+
+.thumbs_up_button:hover .icon {
+  stroke: var(--white);
+}
+
+.thumbs_up_button.pressed {
+  color: var(--green-light);
+}
+
+.thumbs_up_button.pressed .icon {
+  stroke: var(--green-light);
+  fill: none;
+}
+
+@media screen and (min-width: 1278px) {
+  .thumbs_up_button {
+    padding-left: 7rem;
+  }
+}

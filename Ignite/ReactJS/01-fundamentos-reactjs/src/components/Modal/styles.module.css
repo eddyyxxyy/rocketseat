@@ -1,0 +1,60 @@
+.wrapper {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+
+  height: 100vh;
+  width: 100vw;
+
+  display: grid;
+  place-content: center;
+
+  background-color: #000000bf;
+
+  padding: 2rem;
+}
+
+.modal {
+  background-color: var(--gray-600);
+  padding: 2.4rem 3.2rem;
+  border-radius: 0.8rem;
+}
+
+.modal_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+
+  text-align: center;
+}
+
+.modal_content > h2 {
+  font-size: 2.4rem;
+  color: var(--gray-100);
+}
+
+.alternatives {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.alternatives > button {
+  font-weight: 700;
+
+  padding: 1.2rem 3.2rem;
+
+  border: none;
+  border-radius: 0.8rem;
+}
+
+.cancel {
+  background: none;
+}
+
+.submit {
+  background: var(--gray-500);
+  color: var(--red-danger);
+}

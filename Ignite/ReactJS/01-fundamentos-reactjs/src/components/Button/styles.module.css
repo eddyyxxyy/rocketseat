@@ -7,6 +7,14 @@
 
   border: none;
   border-radius: 0.8rem;
+
+  transition: background-color 0.25s ease-out;
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--green-light);
+  filter: brightness(1);
 }
 
 .fit_content {
