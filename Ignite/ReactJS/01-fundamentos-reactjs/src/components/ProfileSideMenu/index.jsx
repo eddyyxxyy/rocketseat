@@ -1,8 +1,7 @@
 import { Profile } from '../Profile';
-import { Button } from '../Button';
+import { ProfileButton } from '../ProfileButton';
 
 import profileSideMenuTopBackground from '../../assets/profile-side-menu-top-background.jpg';
-import pencilIcon from '../../assets/pencil-icon.svg';
 
 import styles from './styles.module.css';
 
@@ -26,7 +25,7 @@ export function ProfileSideMenu({ avatarUrl, userName, userWork }) {
           />
         </div>
         <div className={styles.footer}>
-          <Button iconUrl={pencilIcon} text="Editar o seu perfil" />
+          <ProfileButton text="Editar o seu perfil" />
         </div>
       </div>
     </aside>

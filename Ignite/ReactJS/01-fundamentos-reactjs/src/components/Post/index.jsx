@@ -1,6 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
 
 import { Profile } from '../Profile';
+import { Input } from '../Input';
+import { Button } from '../Button';
 
 import styles from './styles.module.css';
 
@@ -33,6 +35,15 @@ export function Post({ profile, content }) {
         </div>
       </div>
       <div className="divider"></div>
+      <form className={styles.comment}>
+        <Input
+          label="Deixe seu feedback"
+          labelFor="feedback-comment"
+          labelText="Deixe seu feedback"
+          placeholder="Escreva um comentário..."
+        />
+        <Button text="Publicar" fitContent />
+      </form>
     </article>
   );
 }

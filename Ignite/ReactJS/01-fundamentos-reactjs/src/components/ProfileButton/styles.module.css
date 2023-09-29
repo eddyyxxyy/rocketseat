@@ -1,0 +1,58 @@
+.button {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  background: transparent;
+
+  white-space: nowrap;
+
+  font-weight: 700;
+  font-size: clamp(1rem, 0.5455rem + 2.2727vw, 2rem);
+  color: var(--green-light);
+
+  padding: 1.6rem 2.2rem;
+
+  border: 0.1rem solid var(--green-light);
+  border-radius: 0.8rem;
+
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--green);
+  color: var(--white);
+  filter: brightness(1);
+}
+
+.icon_wrapper {
+  height: clamp(1rem, 0.3636rem + 3.1818vw, 2.4rem);
+  width: clamp(1rem, 0.3636rem + 3.1818vw, 2.4rem);
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+  stroke: var(--green-light);
+  transition: stroke 0.25s ease-out;
+}
+
+.button:hover .icon,
+.button:focus .icon {
+  stroke: var(--white);
+}
+
+@media screen and (min-width: 1024px) {
+  .button {
+    font-size: 1.6rem;
+  }
+
+  .img_wrapper {
+    height: 2rem;
+    width: 2rem;
+  }
+}
