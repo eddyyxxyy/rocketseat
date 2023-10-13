@@ -1,7 +1,11 @@
 import dotenv from 'dotenv';
 import { z } from 'zod';
 
-dotenv.config();
+if (process.env.NODE_ENV === 'test') {
+  dotenv.config({ path: '.env.test' });
+} else {
+  dotenv.config();
+}
 
 const port = parseInt(process.env.PORT || '3333', 10);
 
