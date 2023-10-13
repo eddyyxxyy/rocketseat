@@ -16,7 +16,6 @@ export const config: Knex.Config = {
     directory: './db/migrations',
   },
   useNullAsDefault: true,
-  debug: true,
   acquireConnectionTimeout: 10000,
 };
 
