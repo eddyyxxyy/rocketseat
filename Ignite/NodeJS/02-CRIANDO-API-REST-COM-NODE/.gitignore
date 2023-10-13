@@ -1,2 +1,3 @@
-db/app.db
+db/*.db
 .env.test
+dist
