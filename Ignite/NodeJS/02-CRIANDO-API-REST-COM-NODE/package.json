@@ -2,6 +2,9 @@
   "name": "02-criando-api-rest-com-node",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": ">=18"
+  },
   "main": "index.js",
   "scripts": {
     "build": "tsup src",
@@ -23,6 +26,7 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "prettier": "^3.0.3",
+    "sqlite3": "^5.1.6",
     "supertest": "^6.3.3",
     "tsup": "^7.2.0",
     "tsx": "^3.13.0",
@@ -34,7 +38,7 @@
     "dotenv": "^16.3.1",
     "fastify": "^4.23.2",
     "knex": "^2.5.1",
-    "sqlite3": "^5.1.6",
+    "pg": "^8.11.3",
     "zod": "^3.22.4"
   }
 }
